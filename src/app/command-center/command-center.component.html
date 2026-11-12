@@ -1,0 +1,638 @@
+<div class="column-layout placeholder-command-center">
+  <div class="row-layout command-center-page-frame-row">
+    <div class="column-layout command-center-frame-column">
+      <div class="column-layout hero-hud-and-quick-command-bar-section">
+        <div class="row-layout hud-header-and-command-actions">
+          <div class="column-layout hud-title-unit">
+            <p class="ig-typography__overline text">
+              MARK VII TACTICAL HUD // NEURAL ENGINE ONLINE
+            </p>
+            <h3 class="content">
+              Command Center
+            </h3>
+            <p class="text_1">
+              Real-time AI core telemetry, autonomous mission directives, and rapid audio dispatch.
+            </p>
+          </div>
+          <div class="row-layout hud-action-controls">
+            <button igxButton="flat" type="button" (click)="telemetryDownlinkBanner.toggle()" class="downlink-alert">
+              <igx-icon class="icon">
+                wifi_tethering
+              </igx-icon>
+              <span>Downlink Alert</span>
+            </button>
+            <button igxButton="outlined" type="button" (click)="jARVISNeuralCoreDiagnostics.toggle()" class="system-diagnostics">
+              <igx-icon class="icon">
+                tune
+              </igx-icon>
+              <span>System Diagnostics</span>
+            </button>
+            <button igxButton="outlined" type="button" [routerLink]="[`/tasks-and-schedule`]" class="manage-directives">
+              <igx-icon class="icon_1">
+                checklist
+              </igx-icon>
+              <span>Manage Directives</span>
+            </button>
+            <button igxButton="contained" type="button" [routerLink]="[`/ai-assistant`]" class="engage-jarvis-voice">
+              <igx-icon class="icon_2">
+                mic
+              </igx-icon>
+              <span>Engage JARVIS Voice</span>
+            </button>
+          </div>
+        </div>
+        <igx-banner #telemetryDownlinkBanner class="telemetry-downlink-banner">
+          <p>
+            Real-time satellite downlink established with zero dropped telemetry packets.
+          </p>
+          <igx-banner-actions>
+            <button igxButton="flat" type="button" (click)="telemetryDownlinkBanner.toggle()" class="acknowledge">
+              Acknowledge
+            </button>
+          </igx-banner-actions>
+          <igx-icon class="icon_3">
+            satellite_alt
+          </igx-icon>
+        </igx-banner>
+        <div class="column-layout hero-visual-hud-wrapper">
+          <img src="/assets/futuristic-holographic-ai-core-a0d06519e68b.png" alt="" class="image" />
+          <div class="row-layout ai-system-status-chips">
+            <igx-chip class="neural-engine-9-99-8-synaptic">
+              <igx-prefix>
+                <igx-icon class="icon_4">
+                  memory
+                </igx-icon>
+              </igx-prefix>
+              Neural Engine: 99.98% Synaptic
+            </igx-chip>
+            <igx-chip class="neural-engine-9-99-8-synaptic">
+              <igx-prefix>
+                <igx-icon class="icon_5">
+                  speed
+                </igx-icon>
+              </igx-prefix>
+              Quantum Clock: 4.8 GHz Locked
+            </igx-chip>
+            <igx-chip class="neural-engine-9-99-8-synaptic">
+              <igx-prefix>
+                <igx-icon class="icon_6">
+                  satellite_alt
+                </igx-icon>
+              </igx-prefix>
+              StarkSat Downlink: 12ms 256-Bit
+            </igx-chip>
+            <igx-chip class="neural-engine-9-99-8-synaptic">
+              <igx-prefix>
+                <igx-icon class="icon_7">
+                  graphic_eq
+                </igx-icon>
+              </igx-prefix>
+              Voice Synthesizer: Armed
+            </igx-chip>
+          </div>
+        </div>
+        <div class="row-layout rapid-command-dispatch-input-bar">
+          <igx-input-group type="border" class="instant-directive-dispatch">
+            <igx-prefix>
+              <igx-icon class="icon_4">
+                mic
+              </igx-icon>
+            </igx-prefix>
+            <igx-suffix>
+              <igx-icon class="icon_8">
+                graphic_eq
+              </igx-icon>
+            </igx-suffix>
+            <input type="text" [(ngModel)]="value" placeholder="Transmit voice transcription or type directive (e.g., 'JARVIS, calibrate flight stabilizers')..." igxInput />
+            <label igxLabel>Instant Directive Dispatch</label>
+          </igx-input-group>
+          <button igxButton="contained" type="button" (click)="snackbar.toggle()" class="engage-jarvis-voice">
+            <igx-icon class="icon_2">
+              send
+            </igx-icon>
+            <span>Execute Directive</span>
+          </button>
+          <button igxButton="outlined" type="button" (click)="snackbar.toggle()" class="system-diagnostics">
+            <igx-icon class="icon">
+              hearing
+            </igx-icon>
+            <span>Audio Waveform</span>
+          </button>
+        </div>
+      </div>
+      <div class="column-layout telemetry-and-environmental-telemetry-section">
+        <div class="column-layout telemetry-section-header">
+          <h5 class="content">
+            System Diagnostics &amp; Environmental Telemetry
+          </h5>
+          <p class="ig-typography__body-2 text_1">
+            Continuous hardware telemetry, neural processing saturation, and regional atmospheric conditions.
+          </p>
+        </div>
+        <div class="row-layout telemetry-kpi-metric-cards-row">
+          <igx-card class="card">
+            <igx-card-content>
+              <div class="column-layout column-layout_1">
+                <div class="row-layout row-layout_1">
+                  <igx-avatar shape="rounded" class="avatar avatar_4">
+                    <igx-icon class="icon_9">
+                      thermostat
+                    </igx-icon>
+                  </igx-avatar>
+                  <igx-circular-bar type="success" [value]="38" [textVisibility]="false" [animationDuration]="500" class="false"></igx-circular-bar>
+                </div>
+                <div class="column-layout column-layout_2">
+                  <p class="ig-typography__overline text_1">
+                    CORE TEMPERATURE
+                  </p>
+                  <h4 class="content">
+                    38.2°C
+                  </h4>
+                  <p class="ig-typography__caption nominal-thermal-equilibrium-04c">
+                    Nominal thermal equilibrium (+0.4°C)
+                  </p>
+                </div>
+              </div>
+            </igx-card-content>
+            <igx-card-actions>
+              <ng-container igxStart></ng-container>
+              <ng-container igxEnd></ng-container>
+            </igx-card-actions>
+          </igx-card>
+          <igx-card class="card">
+            <igx-card-content>
+              <div class="column-layout column-layout_1">
+                <div class="row-layout row-layout_1">
+                  <igx-avatar shape="rounded" class="avatar_1 avatar_1_1">
+                    <igx-icon class="icon_2">
+                      memory
+                    </igx-icon>
+                  </igx-avatar>
+                  <igx-circular-bar [value]="85" [textVisibility]="false" [animationDuration]="500" class="false_1"></igx-circular-bar>
+                </div>
+                <div class="column-layout column-layout_2">
+                  <p class="ig-typography__overline text_1">
+                    NEURAL ENGINE LOAD
+                  </p>
+                  <h4 class="content">
+                    84.6%
+                  </h4>
+                  <p class="ig-typography__caption text">
+                    Multi-threaded parallel co-processing
+                  </p>
+                </div>
+              </div>
+            </igx-card-content>
+            <igx-card-actions>
+              <ng-container igxStart></ng-container>
+              <ng-container igxEnd></ng-container>
+            </igx-card-actions>
+          </igx-card>
+          <igx-card class="card">
+            <igx-card-content>
+              <div class="column-layout column-layout_1">
+                <div class="row-layout row-layout_1">
+                  <igx-avatar shape="rounded" class="avatar_2 avatar_2_1">
+                    <igx-icon class="icon_10">
+                      satellite_alt
+                    </igx-icon>
+                  </igx-avatar>
+                  <igx-circular-bar type="info" [value]="98" [textVisibility]="false" [animationDuration]="500" class="false_2"></igx-circular-bar>
+                </div>
+                <div class="column-layout column-layout_2">
+                  <p class="ig-typography__overline text_1">
+                    ORBITAL SATELLITE UPLINK
+                  </p>
+                  <h4 class="content">
+                    12 ms
+                  </h4>
+                  <p class="ig-typography__caption stark-sat-0-4-orbital-channel-locked">
+                    StarkSat-04 orbital channel locked
+                  </p>
+                </div>
+              </div>
+            </igx-card-content>
+            <igx-card-actions>
+              <ng-container igxStart></ng-container>
+              <ng-container igxEnd></ng-container>
+            </igx-card-actions>
+          </igx-card>
+          <igx-card class="card">
+            <igx-card-content>
+              <div class="column-layout column-layout_1">
+                <div class="row-layout row-layout_1">
+                  <igx-avatar shape="rounded" class="avatar_3 avatar_3_1">
+                    <igx-icon class="icon_11">
+                      wb_sunny
+                    </igx-icon>
+                  </igx-avatar>
+                  <igx-circular-bar type="warning" [value]="65" [textVisibility]="false" [animationDuration]="500" class="false_3"></igx-circular-bar>
+                </div>
+                <div class="column-layout column-layout_2">
+                  <p class="ig-typography__overline text_1">
+                    MALIBU AMBIENT WEATHER
+                  </p>
+                  <h4 class="content">
+                    19.5°C // Clear
+                  </h4>
+                  <p class="ig-typography__caption humidity-4-2-baro-1-0-1-3-h-pa-8-kts-wnw">
+                    Humidity 42%, Baro 1013 hPa, 8 kts WNW
+                  </p>
+                </div>
+              </div>
+            </igx-card-content>
+            <igx-card-actions>
+              <ng-container igxStart></ng-container>
+              <ng-container igxEnd></ng-container>
+            </igx-card-actions>
+          </igx-card>
+        </div>
+      </div>
+      <div class="column-layout mission-agenda-and-priority-directives-section">
+        <div class="column-layout telemetry-section-header">
+          <h5 class="content">
+            Tactical Directives &amp; Operational Agenda
+          </h5>
+          <p class="ig-typography__body-2 text_1">
+            Prioritized tactical mission objectives synchronized with automated daily reminder timelines.
+          </p>
+        </div>
+        <div class="row-layout agenda-and-directives-split-content">
+          <div class="column-layout active-directives-column">
+            <div class="row-layout row-layout_1">
+              <h6 class="content">
+                Active Mission Directives
+              </h6>
+              <button igxButton="outlined" type="button" [routerLink]="[`/tasks-and-schedule`]" class="add-directive">
+                <igx-icon class="icon">
+                  add
+                </igx-icon>
+                <span>Add Directive</span>
+              </button>
+            </div>
+            <igx-card class="card_1">
+              <igx-card-content>
+                <div class="column-layout column-layout_3">
+                  <div class="row-layout row-layout_1">
+                    <div class="row-layout row-layout_2">
+                      <igx-icon class="icon_12">
+                        flight_takeoff
+                      </igx-icon>
+                      <h6 class="content">
+                        Mark VII Calibration
+                      </h6>
+                    </div>
+                    <igx-badge type="warning" value="Tactical Priority" class="tactical-priority"></igx-badge>
+                  </div>
+                  <p class="ig-typography__body-2 text_1">
+                    Avionics pitch, yaw gyroscopes, and supersonic flight stabilizer telemetry alignment.
+                  </p>
+                  <igx-linear-bar type="warning" [value]="75" [animationDuration]="500" textAlign="center" [textTop]="true" class="true"></igx-linear-bar>
+                  <p class="ig-typography__caption text_1">
+                    Subsystem: Repulsor Avionics // Due: 14:00 PST
+                  </p>
+                </div>
+              </igx-card-content>
+              <igx-card-actions>
+                <ng-container igxStart>
+                  <button igxButton="flat" type="button" (click)="snackbar.toggle()" class="acknowledge">
+                    <igx-icon class="icon">
+                      visibility
+                    </igx-icon>
+                    <span>Inspect Telemetry</span>
+                  </button>
+                  <button igxButton="outlined" type="button" (click)="snackbar.toggle()" class="mark-complete">
+                    <igx-icon class="icon_1">
+                      check
+                    </igx-icon>
+                    <span>Mark Complete</span>
+                  </button>
+                </ng-container>
+                <ng-container igxEnd></ng-container>
+              </igx-card-actions>
+            </igx-card>
+            <igx-card class="card_1">
+              <igx-card-content>
+                <div class="column-layout column-layout_3">
+                  <div class="row-layout row-layout_1">
+                    <div class="row-layout row-layout_2">
+                      <igx-icon class="icon_13">
+                        radar
+                      </igx-icon>
+                      <h6 class="content">
+                        Stark Sat Uplink
+                      </h6>
+                    </div>
+                    <igx-badge type="error" value="Critical Protocol" class="tactical-priority"></igx-badge>
+                  </div>
+                  <p class="ig-typography__body-2 text_1">
+                    Orbital quantum cryptography key exchange and geosynchronous handshake re-keying.
+                  </p>
+                  <igx-linear-bar type="error" [value]="90" [animationDuration]="500" textAlign="center" [textTop]="true" class="true_1"></igx-linear-bar>
+                  <p class="ig-typography__caption text_1">
+                    Subsystem: Orbital Comm // Due: 16:30 PST
+                  </p>
+                </div>
+              </igx-card-content>
+              <igx-card-actions>
+                <ng-container igxStart>
+                  <button igxButton="flat" type="button" (click)="snackbar.toggle()" class="acknowledge">
+                    <igx-icon class="icon">
+                      visibility
+                    </igx-icon>
+                    <span>Inspect Telemetry</span>
+                  </button>
+                  <button igxButton="outlined" type="button" (click)="snackbar.toggle()" class="mark-complete">
+                    <igx-icon class="icon_1">
+                      check
+                    </igx-icon>
+                    <span>Mark Complete</span>
+                  </button>
+                </ng-container>
+                <ng-container igxEnd></ng-container>
+              </igx-card-actions>
+            </igx-card>
+            <igx-card class="card_1">
+              <igx-card-content>
+                <div class="column-layout column-layout_3">
+                  <div class="row-layout row-layout_1">
+                    <div class="row-layout row-layout_2">
+                      <igx-icon class="icon_3">
+                        security
+                      </igx-icon>
+                      <h6 class="content">
+                        Perimeter Diagnostic
+                      </h6>
+                    </div>
+                    <igx-badge type="info" value="Routine Scan" class="tactical-priority"></igx-badge>
+                  </div>
+                  <p class="ig-typography__body-2 text_1">
+                    Point Dume biometric perimeter fencing validation and automated surveillance sweep.
+                  </p>
+                  <igx-linear-bar type="info" [value]="40" [animationDuration]="500" textAlign="center" [textTop]="true" class="true_2"></igx-linear-bar>
+                  <p class="ig-typography__caption text_1">
+                    Subsystem: Perimeter Grid // Due: 18:00 PST
+                  </p>
+                </div>
+              </igx-card-content>
+              <igx-card-actions>
+                <ng-container igxStart>
+                  <button igxButton="flat" type="button" (click)="snackbar.toggle()" class="acknowledge">
+                    <igx-icon class="icon">
+                      visibility
+                    </igx-icon>
+                    <span>Inspect Telemetry</span>
+                  </button>
+                  <button igxButton="outlined" type="button" (click)="snackbar.toggle()" class="mark-complete">
+                    <igx-icon class="icon_1">
+                      check
+                    </igx-icon>
+                    <span>Mark Complete</span>
+                  </button>
+                </ng-container>
+                <ng-container igxEnd></ng-container>
+              </igx-card-actions>
+            </igx-card>
+          </div>
+          <div class="column-layout reminder-schedule-column">
+            <h6 class="content">
+              Reminder Schedule &amp; Timeline
+            </h6>
+            <igx-list class="list">
+              <igx-list-item [selected]="this.listSelectedItem != null && this.listSelectedItem === '0'" (click)="listSelectedItem = '0'">
+                <span igxListThumbnail>
+                  <igx-avatar shape="rounded" class="avatar_1 avatar_1_2">
+                    <igx-icon class="icon_2">
+                      lock
+                    </igx-icon>
+                  </igx-avatar>
+                </span>
+                <span igxListLineTitle>09:30 AM — Defense Briefing</span>
+                <span igxListLineSubTitle>Encrypted audio conference with DARPA tactical liaisons.</span>
+                <span igxListLine>
+                  <p class="ig-typography__caption text_1">
+                    Secure Voice Channel 07
+                  </p>
+                </span>
+                <span igxListAction>
+                  <igx-icon class="icon_8">
+                    chevron_right
+                  </igx-icon>
+                </span>
+              </igx-list-item>
+              <igx-list-item [selected]="this.listSelectedItem != null && this.listSelectedItem === '1'" (click)="listSelectedItem = '1'">
+                <span igxListThumbnail>
+                  <igx-avatar shape="rounded" class="avatar_3 avatar_3_2">
+                    <igx-icon class="icon_11">
+                      bolt
+                    </igx-icon>
+                  </igx-avatar>
+                </span>
+                <span igxListLineTitle>11:00 AM — Arc Reactor Audit</span>
+                <span igxListLineSubTitle>Subterranean facility baseline thermal output verification.</span>
+                <span igxListLine>
+                  <p class="ig-typography__caption text_1">
+                    Energy Grid Telemetry
+                  </p>
+                </span>
+                <span igxListAction>
+                  <igx-icon class="icon_8">
+                    chevron_right
+                  </igx-icon>
+                </span>
+              </igx-list-item>
+              <igx-list-item [selected]="this.listSelectedItem != null && this.listSelectedItem === '2'" (click)="listSelectedItem = '2'">
+                <span igxListThumbnail>
+                  <igx-avatar shape="rounded" class="avatar_2 avatar_2_2">
+                    <igx-icon class="icon_10">
+                      science
+                    </igx-icon>
+                  </igx-avatar>
+                </span>
+                <span igxListLineTitle>02:15 PM — Quantum Synthesizer Test</span>
+                <span igxListLineSubTitle>Heavy isotope decay stabilization in containment chamber B.</span>
+                <span igxListLine>
+                  <p class="ig-typography__caption text_1">
+                    Materials Synthesis Lab
+                  </p>
+                </span>
+                <span igxListAction>
+                  <igx-icon class="icon_8">
+                    chevron_right
+                  </igx-icon>
+                </span>
+              </igx-list-item>
+              <igx-list-item [selected]="this.listSelectedItem != null && this.listSelectedItem === '3'" (click)="listSelectedItem = '3'">
+                <span igxListThumbnail>
+                  <igx-avatar shape="rounded" class="avatar avatar_5">
+                    <igx-icon class="icon_9">
+                      shield
+                    </igx-icon>
+                  </igx-avatar>
+                </span>
+                <span igxListLineTitle>04:45 PM — Armor Stress Resonance</span>
+                <span igxListLineSubTitle>Acoustic harmonic vibration scan on composite titanium alloy.</span>
+                <span igxListLine>
+                  <p class="ig-typography__caption text_1">
+                    Flight Hardware Bay 3
+                  </p>
+                </span>
+                <span igxListAction>
+                  <igx-icon class="icon_8">
+                    chevron_right
+                  </igx-icon>
+                </span>
+              </igx-list-item>
+              <igx-list-item [selected]="this.listSelectedItem != null && this.listSelectedItem === '4'" (click)="listSelectedItem = '4'">
+                <span igxListThumbnail>
+                  <igx-avatar shape="rounded" class="avatar_1 avatar_1_3">
+                    <igx-icon class="icon_2">
+                      cloud_sync
+                    </igx-icon>
+                  </igx-avatar>
+                </span>
+                <span igxListLineTitle>06:30 PM — Neural Cache Snapshot</span>
+                <span igxListLineSubTitle>Automated encrypted neural cache snapshot archived to cloud vault.</span>
+                <span igxListLine>
+                  <p class="ig-typography__caption text_1">
+                    Offsite Redundant Backup
+                  </p>
+                </span>
+                <span igxListAction>
+                  <igx-icon class="icon_8">
+                    chevron_right
+                  </igx-icon>
+                </span>
+              </igx-list-item>
+            </igx-list>
+          </div>
+        </div>
+      </div>
+      <div class="column-layout mission-agenda-and-priority-directives-section">
+        <div class="column-layout telemetry-section-header">
+          <h5 class="content">
+            Voice Subsystem Dispatch &amp; Protocol Override
+          </h5>
+          <p class="ig-typography__body-2 text_1">
+            Toggle acoustic surveillance sensors to authorize executive command protocol selection and review designated authority status.
+          </p>
+        </div>
+        <div class="row-layout voice-dispatch-interactive-row">
+          <div class="column-layout voice-dispatch-writers-column">
+            <igx-switch [(ngModel)]="ambientAcousticSensorActive" class="ambient-acoustic-surveillance">
+              Ambient Acoustic Surveillance
+            </igx-switch>
+            <p class="ig-typography__caption text_1">
+              Enabling acoustic surveillance unlocks the Executive Command Protocol selector below.
+            </p>
+            <igx-select type="border" placeholder="Select authorized protocol directive" [(ngModel)]="executiveCommandProtocol" class="executive-command-protocol">
+              <igx-select-item value="Standard Dispatch">
+                Standard Dispatch
+              </igx-select-item>
+              <igx-select-item value="Tactical Priority">
+                Tactical Priority
+              </igx-select-item>
+              <igx-select-item value="Emergency Directive">
+                Emergency Directive
+              </igx-select-item>
+              <igx-select-item value="Diagnostic Standby">
+                Diagnostic Standby
+              </igx-select-item>
+              <label igxLabel>Executive Command Protocol</label>
+            </igx-select>
+            <div class="row-layout protocol-dispatch-action-buttons">
+              <button igxButton="outlined" type="button" (click)="ambientAcousticSensorActive = false" class="manage-directives">
+                <igx-icon class="icon_1">
+                  refresh
+                </igx-icon>
+                <span>Reset Protocols</span>
+              </button>
+              <button igxButton="contained" type="button" (click)="snackbar.toggle()" class="engage-jarvis-voice">
+                <igx-icon class="icon_2">
+                  save
+                </igx-icon>
+                <span>Save Telemetry Profile</span>
+              </button>
+            </div>
+          </div>
+          <igx-card class="card_2">
+            <igx-card-content>
+              <div class="column-layout column-layout_4">
+                <div class="row-layout row-layout_1">
+                  <p class="ig-typography__overline text_1">
+                    VOICE DISPATCH STATUS SUMMARY
+                  </p>
+                  <igx-badge value="Active Protocol" class="tactical-priority"></igx-badge>
+                </div>
+                <div class="column-layout telemetry-section-header">
+                  <p class="ig-typography__caption text_1">
+                    Designated Command Directive:
+                  </p>
+                  <p class="text">
+                    {{ executiveCommandProtocol }}
+                  </p>
+                </div>
+                <p class="ig-typography__body-2 text_1">
+                  JARVIS voice synthesizer dynamically routes neural speech synthesis, audio waveforms, and transcription priority according to this active authority tier.
+                </p>
+              </div>
+            </igx-card-content>
+            <igx-card-actions>
+              <ng-container igxStart></ng-container>
+              <ng-container igxEnd></ng-container>
+            </igx-card-actions>
+          </igx-card>
+        </div>
+      </div>
+      <igx-dialog [closeOnOutsideSelect]="true" #jARVISNeuralCoreDiagnostics class="jarvis-neural-core-diagnostics">
+        <igx-dialog-title>
+          JARVIS Neural Core Diagnostics
+        </igx-dialog-title>
+        <ng-container>
+          <div class="column-layout column-layout_5">
+            <div class="row-layout row-layout_1">
+              <p class="ig-typography__body-2 neural-engine-uptime">
+                Neural Engine Uptime
+              </p>
+              <igx-badge type="success" value="99.98% Nominal" class="tactical-priority"></igx-badge>
+            </div>
+            <div class="row-layout row-layout_1">
+              <p class="ig-typography__body-2 neural-engine-uptime">
+                Quantum Cache Parity
+              </p>
+              <igx-badge type="info" value="Zero Memory Faults" class="tactical-priority"></igx-badge>
+            </div>
+            <div class="row-layout row-layout_1">
+              <p class="ig-typography__body-2 neural-engine-uptime">
+                Voice Synthesizer Latency
+              </p>
+              <p class="ig-typography__body-2 ms-response">
+                14 ms response
+              </p>
+            </div>
+            <div class="row-layout row-layout_1">
+              <p class="ig-typography__body-2 neural-engine-uptime">
+                Biometric Sensors
+              </p>
+              <igx-badge type="success" value="Synchronized" class="tactical-priority"></igx-badge>
+            </div>
+          </div>
+        </ng-container>
+        <igx-dialog-actions>
+          <button igxButton="contained" type="button" (click)="snackbar.toggle()" class="rerun-full-diagnostics">
+            <igx-icon class="icon_2">
+              refresh
+            </igx-icon>
+            <span>Rerun Full Diagnostics</span>
+          </button>
+          <button igxButton="flat" type="button" (click)="jARVISNeuralCoreDiagnostics.toggle()" class="close-diagnostics">
+            Close Diagnostics
+          </button>
+        </igx-dialog-actions>
+      </igx-dialog>
+      <igx-snackbar actionText="Dismiss" (clicked)="snackbar.toggle()" #snackbar class="snackbar">
+        Voice telemetry profile updated successfully.
+      </igx-snackbar>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,805 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+}
+.column-layout {
+  display: flex;
+  flex-direction: column;
+}
+.placeholder-tasks-and-schedule {
+  background-color: var(--ig-surface-900);
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.row-layout {
+  display: flex;
+}
+.page-frame-row {
+  justify-content: center;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0;
+  position: relative;
+  padding: 48px 32px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.page-content-container {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 24px;
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  max-width: 1280px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.directive-priority-grid-section {
+  background-color: var(--ig-surface-800);
+  border-color: var(--ig-surface-600);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 12px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 20px;
+  position: relative;
+  padding: 24px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.directives-header-row {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.directives-heading-block {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 6px;
+  position: relative;
+  min-width: 300px;
+  flex-grow: 1;
+}
+.directives-actions-row {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.directives-filter-chips-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.analytics-header-block {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 6px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.kpi-metrics-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.total-time-kpi-card {
+  --background: var(--ig-surface-700);
+  --outline-color: var(--ig-surface-600);
+  min-width: 240px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.column-layout_1 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 4px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.row-layout_1 {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 6px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.deck-two-column-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 24px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.reminders-pane-column {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 340px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.reminders-pane-header {
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.column-layout_2 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 2px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.notes-cards-stack {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 14px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.reactor-note-card {
+  --background: var(--ig-surface-700);
+  --outline-color: var(--ig-surface-600);
+  height: max-content;
+  min-width: 320px;
+  max-width: 576px;
+}
+.column-layout_3 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 8px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.row-layout_2 {
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 6px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.column-layout_4 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.row-layout_3 {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.section-header-row {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px 16px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.split-layout-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 20px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.morning-news-briefing-column {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 340px;
+  flex-grow: 1;
+  flex-basis: 540px;
+}
+.morning-controls-container {
+  background-color: var(--ig-surface-700);
+  border-color: var(--ig-surface-600);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  padding: 16px;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+.briefing-header-row {
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px;
+  position: relative;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+.briefing-title-box {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 2px;
+  position: relative;
+  min-width: 50px;
+}
+.switch-and-delivery-time-row {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px 16px;
+  position: relative;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+.scope-chips-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 6px 8px;
+  position: relative;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+.global-wire-container {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 8px;
+  position: relative;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+.wire-title-row {
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 4px 8px;
+  position: relative;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+.optical-date-scanner-card {
+  --background: var(--ig-surface-700);
+  --outline-color: var(--ig-surface-600);
+  --border-radius: 12px;
+  min-width: 300px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.scanner-card-content-box {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  min-width: 50px;
+}
+.date-row-1 {
+  background-color: var(--ig-surface-800);
+  border-radius: 6px;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 4px 10px;
+  position: relative;
+  padding: 8px 10px;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+.date-label-1 {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 4px 8px;
+  position: relative;
+  min-width: 50px;
+  flex-grow: 1;
+}
+.dialog-content-container {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 320px;
+}
+.viewfinder-frame {
+  background-color: var(--ig-surface-900);
+  border-color: var(--ig-primary-500);
+  border-width: 2px;
+  border-style: dashed;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 12px;
+  position: relative;
+  padding: 12px;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+.viewfinder-status-row {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: 8px 12px;
+  position: relative;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+.document-setup-row {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+.content {
+  color: var(--ig-gray-900);
+  height: max-content;
+  min-width: min-content;
+}
+.text {
+  color: var(--ig-gray-700);
+  height: max-content;
+  min-width: min-content;
+}
+.icon {
+  color: var(--ig-primary-500-contrast);
+}
+.icon_1 {
+  color: var(--ig-primary-400);
+}
+.icon_2 {
+  color: var(--ig-gray-700);
+}
+.all-directives-1-4 {
+  --ig-size: var(--ig-size-medium);
+  width: max-content;
+  height: max-content;
+}
+.icon_3 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+.avatar {
+  --ig-size: var(--ig-size-medium);
+  --igx-avatar-background: var(--ig-primary-500);
+}
+.allocated {
+  color: var(--ig-info-400);
+  height: max-content;
+  min-width: min-content;
+}
+.avatar_1 {
+  --ig-size: var(--ig-size-medium);
+  --igx-avatar-background: var(--ig-warn-500);
+}
+.icon_4 {
+  color: var(--ig-warn-500-contrast);
+}
+.requires-voice-ack {
+  color: var(--ig-warn-400);
+  height: max-content;
+  min-width: min-content;
+}
+.avatar_2 {
+  --ig-size: var(--ig-size-medium);
+  --igx-avatar-background: var(--ig-info-500);
+}
+.icon_5 {
+  color: var(--ig-info-500-contrast);
+}
+.optimal-throughput {
+  color: var(--ig-success-400);
+  height: max-content;
+  min-width: min-content;
+}
+.avatar_3 {
+  --ig-size: var(--ig-size-medium);
+  --igx-avatar-background: var(--ig-success-500);
+}
+.icon_6 {
+  color: var(--ig-success-500-contrast);
+}
+.icon_7 {
+  --size: 24px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--ig-info-500);
+}
+.icon_8 {
+  --size: 24px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--ig-primary-500);
+}
+.icon_9 {
+  --size: 24px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--ig-warn-500);
+}
+.avatar_4 {
+  --ig-size: var(--ig-size-medium);
+  --igx-avatar-background: var(--ig-secondary-500);
+}
+.icon_10 {
+  color: var(--ig-secondary-500-contrast);
+}
+.text_1 {
+  color: var(--ig-gray-400);
+  height: max-content;
+  min-width: min-content;
+}
+.icon_11 {
+  color: var(--ig-gray-800);
+}
+.icon_12 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-primary-400);
+}
+.treaty-scope-chip {
+  --ig-size: var(--ig-size-small);
+  width: max-content;
+  height: max-content;
+}
+.icon_13 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-info-400);
+}
+.icon_14 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-success-400);
+}
+.icon_15 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-warn-400);
+}
+.badge-1 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-error-500);
+}
+.badge-2 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-info-500);
+}
+.badge-3 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-success-500);
+}
+.badge-4 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-warn-500);
+}
+.image {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+}
+.date-text-1 {
+  color: var(--ig-gray-900);
+  height: max-content;
+  min-width: min-content;
+  flex-grow: 1;
+}
+.viewfinder-live-feed {
+  object-fit: cover;
+  border-radius: 6px;
+  width: 100%;
+  height: 220px;
+  min-width: 100%;
+  min-height: 220px;
+  max-width: 100%;
+  max-height: 220px;
+  flex-shrink: 0;
+}
+.avatar_5::part(base) {
+  --igx-avatar-color: var(--ig-primary-500-contrast);
+}
+.avatar_6::part(base) {
+  --igx-avatar-color: var(--ig-primary-500-contrast);
+}
+.avatar_7::part(base) {
+  --igx-avatar-color: var(--ig-primary-500-contrast);
+}
+.avatar_8::part(base) {
+  --igx-avatar-color: var(--ig-primary-500-contrast);
+}
+.avatar_9::part(base) {
+  --igx-avatar-color: var(--ig-primary-500-contrast);
+}
+.avatar_10::part(base) {
+  --igx-avatar-color: var(--ig-primary-500-contrast);
+}
+.avatar_1_1::part(base) {
+  --igx-avatar-color: var(--ig-warn-500-contrast);
+}
+.avatar_1_2::part(base) {
+  --igx-avatar-color: var(--ig-warn-500-contrast);
+}
+.avatar_1_3::part(base) {
+  --igx-avatar-color: var(--ig-warn-500-contrast);
+}
+.avatar_1_4::part(base) {
+  --igx-avatar-color: var(--ig-warn-500-contrast);
+}
+.avatar_2_1::part(base) {
+  --igx-avatar-color: var(--ig-info-500-contrast);
+}
+.avatar_2_2::part(base) {
+  --igx-avatar-color: var(--ig-info-500-contrast);
+}
+.avatar_2_3::part(base) {
+  --igx-avatar-color: var(--ig-info-500-contrast);
+}
+.avatar_3_1::part(base) {
+  --igx-avatar-color: var(--ig-success-500-contrast);
+}
+.avatar_3_2::part(base) {
+  --igx-avatar-color: var(--ig-success-500-contrast);
+}
+.avatar_3_3::part(base) {
+  --igx-avatar-color: var(--ig-success-500-contrast);
+}
+.avatar_4_1::part(base) {
+  --igx-avatar-color: var(--ig-secondary-500-contrast);
+}
+.directive-duration-apex-chart {
+  width: 100%;
+  height: 380px;
+  min-width: 100%;
+  min-height: 380px;
+  max-width: 100%;
+  max-height: 380px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.btn-create-directive-2 {
+  --foreground: var(--ig-primary-500-contrast);
+  --background: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.add-reminder {
+  --foreground: var(--ig-primary-400);
+  --border-color: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.purge-dismissed {
+  --foreground: var(--ig-gray-700);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.view-directive-details {
+  --foreground: var(--ig-primary-400);
+  --ig-size: var(--ig-size-small);
+  height: max-content;
+}
+.user-input_1 {
+  height: max-content;
+  min-width: min-content;
+}
+.user-input {
+  min-width: 220px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.target-completion-due-date {
+  height: max-content;
+  min-width: 120px;
+}
+.cancel {
+  --foreground: var(--ig-gray-800);
+  --border-color: var(--ig-surface-600);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.initialize-directive {
+  --foreground: var(--ig-primary-500-contrast);
+  --background: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.sync-dates-button {
+  --foreground: var(--ig-gray-800);
+  --border-color: var(--ig-surface-600);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.morning-global-news-alert-switch {
+  width: max-content;
+  height: max-content;
+}
+.digest-delivery-time-select {
+  --ig-size: var(--ig-size-medium);
+  min-width: 220px;
+  flex-grow: 1;
+  flex-basis: 220px;
+}
+.dismiss-dialog-button {
+  --foreground: var(--ig-gray-700);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.tactical-directives-grid {
+  --ig-size: var(--ig-size-medium);
+  min-width: 100%;
+  min-height: 460px;
+  max-width: 100%;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.tactical-reminders-list {
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.reminder-item-1-2 {
+  --item-background: var(--ig-surface-700);
+  --item-background-hover: var(--igx-list-item-background-hover, var(--ig-list-item-background-hover, lch(from var(--item-background) calc(l + (50 - l) * 0.1 + sign(50 - l) * 5) c h)));
+  --item-background-active: var(--igx-list-item-background-active, var(--ig-list-item-background-active, var(--item-background-hover)));
+  --item-background-selected: var(--igx-list-item-background-selected, var(--ig-list-item-background-selected, var(--item-background-active)));
+  --item-text-color: var(--igx-list-item-text-color, var(--ig-list-item-text-color, hsla(from color(from var(--item-background) var(--y-contrast)) h 0 l/1)));
+  --item-text-color-hover: var(--igx-list-item-text-color-hover, var(--ig-list-item-text-color-hover, hsla(from color(from var(--item-background-hover) var(--y-contrast)) h 0 l/1)));
+  --item-text-color-active: var(--igx-list-item-text-color-active, var(--ig-list-item-text-color-active, hsla(from color(from var(--item-background-active) var(--y-contrast)) h 0 l/1)));
+  --item-text-color-selected: var(--igx-list-item-text-color-selected, var(--ig-list-item-text-color-selected, hsla(from color(from var(--item-background-selected) var(--y-contrast)) h 0 l/1)));
+  --item-title-color: var(--igx-list-item-title-color, var(--ig-list-item-title-color, var(--item-text-color)));
+  --item-title-color-hover: var(--igx-list-item-title-color-hover, var(--ig-list-item-title-color-hover, var(--item-text-color-hover)));
+  --item-title-color-active: var(--igx-list-item-title-color-active, var(--ig-list-item-title-color-active, var(--item-text-color-active)));
+  --item-title-color-selected: var(--igx-list-item-title-color-selected, var(--ig-list-item-title-color-selected, var(--item-text-color-selected)));
+  --item-action-color: var(--igx-list-item-action-color, var(--ig-list-item-action-color, var(--item-text-color)));
+  --item-action-color-hover: var(--igx-list-item-action-color-hover, var(--ig-list-item-action-color-hover, var(--item-text-color-hover)));
+  --item-action-color-active: var(--igx-list-item-action-color-active, var(--ig-list-item-action-color-active, var(--item-text-color-active)));
+  --item-action-color-selected: var(--igx-list-item-action-color-selected, var(--ig-list-item-action-color-selected, var(--item-text-color-selected)));
+  --item-subtitle-color: var(--igx-list-item-subtitle-color, var(--ig-list-item-subtitle-color, hsl(from var(--item-text-color) h s l/0.74)));
+  --item-subtitle-color-hover: var(--igx-list-item-subtitle-color-hover, var(--ig-list-item-subtitle-color-hover, hsl(from var(--item-text-color-hover) h s l/0.74)));
+  --item-subtitle-color-active: var(--igx-list-item-subtitle-color-active, var(--ig-list-item-subtitle-color-active, hsl(from var(--item-text-color-active) h s l/0.74)));
+  --item-subtitle-color-selected: var(--igx-list-item-subtitle-color-selected, var(--ig-list-item-subtitle-color-selected, hsl(from var(--item-text-color-selected) h s l/0.74)));
+  --item-thumbnail-color: var(--igx-list-item-thumbnail-color, var(--ig-list-item-thumbnail-color, var(--item-text-color)));
+  --item-thumbnail-color-hover: var(--igx-list-item-thumbnail-color-hover, var(--ig-list-item-thumbnail-color-hover, var(--item-text-color-hover)));
+  --item-thumbnail-color-active: var(--igx-list-item-thumbnail-color-active, var(--ig-list-item-thumbnail-color-active, var(--item-text-color-active)));
+  --item-thumbnail-color-selected: var(--igx-list-item-thumbnail-color-selected, var(--ig-list-item-thumbnail-color-selected, var(--item-text-color-selected)));
+}
+.active {
+  width: max-content;
+  height: max-content;
+}
+.create-directive-dialog {
+  position: absolute;
+}
+.tactical-queue-snackbar {
+  height: max-content;
+  min-width: 344px;
+}

@@ -1,0 +1,487 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0;
+}
+.jarvis-navbar {
+  --igx-navbar-background: var(--ig-surface-900);
+  height: max-content;
+  min-width: min-content;
+}
+.jarvis-drawer {
+  --background: var(--ig-surface-800);
+  --item-hover-background: var(--igx-nav-drawer-item-hover-background, var(--ig-nav-drawer-item-hover-background, lch(from var(--background) calc(l + (50 - l) * 0.1 + sign(50 - l) * 5) c h)));
+  --item-active-background: var(--igx-nav-drawer-item-active-background, var(--ig-nav-drawer-item-active-background, lch(from var(--background) calc(l + (50 - l) * 0.1 + sign(50 - l) * 10) c h)));
+  --item-disabled-text-color: var(--igx-nav-drawer-item-disabled-text-color, var(--ig-nav-drawer-item-disabled-text-color, hsl(from hsla(from color(from var(--background) var(--y-contrast)) h 0 l/1) h s l/0.38)));
+  --item-disabled-icon-color: var(--igx-nav-drawer-item-disabled-icon-color, var(--ig-nav-drawer-item-disabled-icon-color, hsl(from hsla(from color(from var(--background) var(--y-contrast)) h 0 l/1) h s l/0.38)));
+  --item-hover-icon-color: var(--igx-nav-drawer-item-hover-icon-color, var(--ig-nav-drawer-item-hover-icon-color, hsla(from color(from var(--background) var(--y-contrast)) h 0 l/1)));
+  --item-hover-text-color: var(--igx-nav-drawer-item-hover-text-color, var(--ig-nav-drawer-item-hover-text-color, hsla(from color(from var(--background) var(--y-contrast)) h 0 l/1)));
+  --item-text-color: var(--igx-nav-drawer-item-text-color, var(--ig-nav-drawer-item-text-color, hsla(from color(from var(--background) var(--y-contrast)) h 0 l/1)));
+  --item-active-icon-color: var(--igx-nav-drawer-item-active-icon-color, var(--ig-nav-drawer-item-active-icon-color, hsla(from color(from var(--item-active-background) var(--y-contrast)) h 0 l/1)));
+  --item-active-text-color: var(--igx-nav-drawer-item-active-text-color, var(--ig-nav-drawer-item-active-text-color, hsla(from color(from var(--item-active-background) var(--y-contrast)) h 0 l/1)));
+  --item-icon-color: var(--igx-nav-drawer-item-icon-color, var(--ig-nav-drawer-item-icon-color, hsla(from color(from var(--background) var(--y-contrast)) h 0 l/1)));
+  --item-header-text-color: var(--igx-nav-drawer-item-header-text-color, var(--ig-nav-drawer-item-header-text-color, hsla(from color(from var(--background) var(--y-contrast)) h 0 l/1)));
+  min-width: min-content;
+  min-height: 0;
+  max-width: 280px;
+  flex-shrink: 0;
+}
+.jarvis-view-container {
+  overflow: auto;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  flex-grow: 1;
+}
+.navbar-content {
+  gap: 1rem;
+}
+.btn-toggle-drawer {
+  --foreground: var(--ig-surface-900-contrast);
+}
+.btn-photograph-schedule {
+  --foreground: var(--ig-primary-500-contrast);
+  --background: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.btn-upload-document {
+  --foreground: var(--ig-primary-400);
+  --border-color: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.btn-resync-ocr {
+  --foreground: var(--ig-primary-400);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.switch-global-news {
+  width: max-content;
+  height: max-content;
+}
+.user-input {
+  min-width: 260px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.btn-reset-preferences {
+  --foreground: var(--ig-gray-800);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.btn-card-calibrate {
+  --foreground: var(--ig-primary-400);
+  --ig-size: var(--ig-size-small);
+  height: max-content;
+}
+.picker-dialog-date {
+  min-width: 200px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.select-dialog-category {
+  min-width: 220px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.input-dialog-confidence {
+  min-width: 140px;
+  flex-shrink: 0;
+  flex-basis: 140px;
+}
+.btn-dialog-cancel {
+  --foreground: var(--ig-gray-800);
+  --border-color: var(--ig-surface-600);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.btn-dialog-confirm {
+  --foreground: var(--ig-primary-500-contrast);
+  --background: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.icon {
+  color: var(--ig-surface-900-contrast);
+}
+.h6 {
+  margin: 0;
+}
+.content {
+  color: var(--ig-gray-900);
+  height: max-content;
+  min-width: min-content;
+}
+.desc-dates-intake {
+  color: var(--ig-gray-700);
+  height: max-content;
+  min-width: min-content;
+}
+.icon_1 {
+  color: var(--ig-primary-500-contrast);
+}
+.icon_2 {
+  color: var(--ig-primary-400);
+}
+.chip-all-directives {
+  --ig-size: var(--ig-size-medium);
+  width: max-content;
+  height: max-content;
+}
+.icon_3 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-primary-400);
+}
+.icon_4 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-success-500);
+}
+.icon_5 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-info-400);
+}
+.icon_6 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-warn-500);
+}
+.icon-news-globe {
+  --size: 24px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--ig-warn-500);
+}
+.avatar-morning-card {
+  --ig-size: var(--ig-size-medium);
+  --igx-avatar-background: var(--ig-primary-500);
+}
+.icon-card-time {
+  --size: 24px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--ig-primary-400);
+}
+.icon-dialog-camera {
+  --size: 36px;
+  font-size: 36px;
+  width: 36px;
+  height: 36px;
+  color: var(--ig-primary-400);
+}
+.title-dialog-scanner {
+  text-align: center;
+  color: var(--ig-gray-900);
+  height: max-content;
+  min-width: min-content;
+}
+.desc-dialog-scanner {
+  text-align: center;
+  color: var(--ig-gray-700);
+  height: max-content;
+  min-width: min-content;
+}
+.avatar-morning-card::part(base) {
+  --igx-avatar-color: var(--ig-primary-500-contrast);
+}
+.row-layout {
+  display: flex;
+}
+.jarvis-content-layout {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.column-layout {
+  display: flex;
+  flex-direction: column;
+}
+.important-dates-photo-intake-directives {
+  background-color: var(--ig-surface-800);
+  border-color: var(--ig-surface-600);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 12px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 20px;
+  position: relative;
+  padding: 24px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.row-photo-header {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.col-photo-header-text {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 6px;
+  position: relative;
+  min-width: 300px;
+  flex-grow: 1;
+}
+.row-photo-header-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.row-directive-chips {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px 10px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.col-morning-header-text {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 4px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.row-morning-split {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 24px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.col-morning-controls {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 360px;
+  flex-grow: 3;
+  flex-basis: 0;
+}
+.box-news-toggle {
+  background-color: var(--ig-surface-700);
+  border-color: var(--ig-surface-600);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  padding: 16px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.row-news-switch-header {
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.row-news-title-group {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.row-timing-selectors {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.row-secondary-switches {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px 24px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.row-preferences-actions {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.col-morning-card-wrapper {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 300px;
+  flex-grow: 2;
+  flex-basis: 0;
+}
+.card-morning-summary {
+  --background: var(--ig-surface-700);
+  --outline-color: var(--ig-surface-600);
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+.col-morning-card-content {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  padding: 16px;
+  min-width: 50px;
+  min-height: 50px;
+}
+.row-card-detail-time {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 6px 8px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.col-dialog-content {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+  min-width: 420px;
+  max-width: 100%;
+}
+.box-dialog-viewfinder {
+  background-color: var(--ig-surface-700);
+  border-color: var(--ig-primary-500);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 8px;
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  min-width: 100%;
+  min-height: 140px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.row-dialog-fields-1 {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.grid-task-directives {
+  --ig-size: var(--ig-size-medium);
+  min-width: 100%;
+  min-height: 460px;
+  max-width: 100%;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.badge-news-status {
+  width: max-content;
+  height: max-content;
+}
+.bar-card-readiness {
+  --fill-color-default: var(--ig-primary-500);
+  width: 100%;
+  height: max-content;
+  min-width: 75px;
+  min-height: null;
+  max-width: 100%;
+}
+.document-photo-capture-dialog {
+  position: absolute;
+}
+.snackbar-morning-prefs {
+  height: max-content;
+  min-width: 344px;
+  flex-shrink: 0;
+}

@@ -1,0 +1,652 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+}
+.column-layout {
+  display: flex;
+  flex-direction: column;
+}
+.placeholder-command-center {
+  background-color: var(--ig-surface-900);
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.row-layout {
+  display: flex;
+}
+.command-center-page-frame-row {
+  justify-content: center;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0;
+  position: relative;
+  padding: 48px 32px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.command-center-frame-column {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 24px;
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  max-width: 1280px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.hero-hud-and-quick-command-bar-section {
+  background-color: var(--ig-surface-800);
+  border-color: var(--ig-primary-500);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 12px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 20px;
+  position: relative;
+  padding: 24px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.hud-header-and-command-actions {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 16px 20px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.hud-title-unit {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 6px;
+  position: relative;
+  min-width: 300px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.hud-action-controls {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: flex-start;
+  gap: 10px 12px;
+  position: relative;
+  min-width: 260px;
+  flex-shrink: 0;
+}
+.hero-visual-hud-wrapper {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.ai-system-status-chips {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 8px 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.rapid-command-dispatch-input-bar {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.telemetry-and-environmental-telemetry-section {
+  background-color: var(--ig-surface-800);
+  border-color: var(--ig-surface-600);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 12px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  padding: 24px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.telemetry-section-header {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 4px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.telemetry-kpi-metric-cards-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.card {
+  --background: var(--ig-surface-700);
+  --outline-color: var(--ig-surface-600);
+  min-width: 260px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.column-layout_1 {
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  padding: 16px;
+  min-width: 50px;
+  min-height: 50px;
+}
+.row-layout_1 {
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.column-layout_2 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 2px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.mission-agenda-and-priority-directives-section {
+  background-color: var(--ig-surface-800);
+  border-color: var(--ig-surface-600);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 12px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 20px;
+  position: relative;
+  padding: 24px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.agenda-and-directives-split-content {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 24px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.active-directives-column {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 420px;
+  flex-grow: 3;
+  flex-basis: 0;
+}
+.card_1 {
+  --background: var(--ig-surface-700);
+  --outline-color: var(--ig-surface-600);
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+.column-layout_3 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 10px;
+  position: relative;
+  padding: 16px;
+  min-width: 50px;
+  min-height: 50px;
+}
+.row-layout_2 {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 6px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.reminder-schedule-column {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 300px;
+  flex-grow: 2;
+  flex-basis: 0;
+}
+.voice-dispatch-interactive-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 20px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.voice-dispatch-writers-column {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 340px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.protocol-dispatch-action-buttons {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 10px 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.card_2 {
+  --background: var(--ig-surface-700);
+  --outline-color: var(--ig-surface-600);
+  min-width: 300px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.column-layout_4 {
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  padding: 18px;
+  min-width: 50px;
+  min-height: 50px;
+}
+.column-layout_5 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 14px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.text {
+  color: var(--ig-primary-400);
+  height: max-content;
+  min-width: min-content;
+}
+.content {
+  color: var(--ig-gray-900);
+  height: max-content;
+  min-width: min-content;
+}
+.text_1 {
+  color: var(--ig-gray-700);
+  height: max-content;
+  min-width: min-content;
+}
+.icon {
+  color: var(--ig-primary-400);
+}
+.icon_1 {
+  color: var(--ig-gray-800);
+}
+.icon_2 {
+  color: var(--ig-primary-500-contrast);
+}
+.icon_3 {
+  --size: 24px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--ig-info-400);
+}
+.image {
+  object-fit: cover;
+  border-radius: 8px;
+  width: 100%;
+  height: 300px;
+  min-width: 100%;
+  min-height: 300px;
+  max-width: 100%;
+  max-height: 300px;
+  flex-shrink: 0;
+}
+.neural-engine-9-99-8-synaptic {
+  --ig-size: var(--ig-size-small);
+  width: max-content;
+  height: max-content;
+}
+.icon_4 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-primary-400);
+}
+.icon_5 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-info-400);
+}
+.icon_6 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-success-400);
+}
+.icon_7 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-warn-400);
+}
+.icon_8 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-gray-700);
+}
+.avatar {
+  --ig-size: var(--ig-size-small);
+  --igx-avatar-background: var(--ig-success-500);
+}
+.icon_9 {
+  color: var(--ig-success-500-contrast);
+}
+.nominal-thermal-equilibrium-04c {
+  color: var(--ig-success-400);
+  height: max-content;
+  min-width: min-content;
+}
+.avatar_1 {
+  --ig-size: var(--ig-size-small);
+  --igx-avatar-background: var(--ig-primary-500);
+}
+.avatar_2 {
+  --ig-size: var(--ig-size-small);
+  --igx-avatar-background: var(--ig-info-500);
+}
+.icon_10 {
+  color: var(--ig-info-500-contrast);
+}
+.stark-sat-0-4-orbital-channel-locked {
+  color: var(--ig-info-400);
+  height: max-content;
+  min-width: min-content;
+}
+.avatar_3 {
+  --ig-size: var(--ig-size-small);
+  --igx-avatar-background: var(--ig-warn-500);
+}
+.icon_11 {
+  color: var(--ig-warn-500-contrast);
+}
+.humidity-4-2-baro-1-0-1-3-h-pa-8-kts-wnw {
+  color: var(--ig-warn-400);
+  height: max-content;
+  min-width: min-content;
+}
+.icon_12 {
+  --size: 24px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--ig-primary-400);
+}
+.icon_13 {
+  --size: 24px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--ig-error-400);
+}
+.neural-engine-uptime {
+  color: var(--ig-gray-800);
+  height: max-content;
+  min-width: min-content;
+}
+.ms-response {
+  color: var(--ig-primary-500);
+  height: max-content;
+  min-width: min-content;
+}
+.avatar_4::part(base) {
+  --igx-avatar-color: var(--ig-success-500-contrast);
+}
+.avatar_5::part(base) {
+  --igx-avatar-color: var(--ig-success-500-contrast);
+}
+.avatar_1_1::part(base) {
+  --igx-avatar-color: var(--ig-primary-500-contrast);
+}
+.avatar_1_2::part(base) {
+  --igx-avatar-color: var(--ig-primary-500-contrast);
+}
+.avatar_1_3::part(base) {
+  --igx-avatar-color: var(--ig-primary-500-contrast);
+}
+.avatar_2_1::part(base) {
+  --igx-avatar-color: var(--ig-info-500-contrast);
+}
+.avatar_2_2::part(base) {
+  --igx-avatar-color: var(--ig-info-500-contrast);
+}
+.avatar_3_1::part(base) {
+  --igx-avatar-color: var(--ig-warn-500-contrast);
+}
+.avatar_3_2::part(base) {
+  --igx-avatar-color: var(--ig-warn-500-contrast);
+}
+.downlink-alert {
+  --foreground: var(--ig-primary-400);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.system-diagnostics {
+  --foreground: var(--ig-primary-400);
+  --border-color: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.manage-directives {
+  --foreground: var(--ig-gray-800);
+  --border-color: var(--ig-surface-600);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.engage-jarvis-voice {
+  --foreground: var(--ig-primary-500-contrast);
+  --background: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.acknowledge {
+  --foreground: var(--ig-primary-400);
+  --ig-size: var(--ig-size-small);
+  height: max-content;
+}
+.instant-directive-dispatch {
+  min-width: 320px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.add-directive {
+  --foreground: var(--ig-primary-400);
+  --border-color: var(--ig-primary-500);
+  --ig-size: var(--ig-size-small);
+  height: max-content;
+  flex-shrink: 0;
+}
+.mark-complete {
+  --foreground: var(--ig-gray-800);
+  --border-color: var(--ig-surface-600);
+  --ig-size: var(--ig-size-small);
+  height: max-content;
+}
+.ambient-acoustic-surveillance {
+  width: max-content;
+  height: max-content;
+}
+.executive-command-protocol {
+  height: max-content;
+  min-width: min-content;
+}
+.rerun-full-diagnostics {
+  --foreground: var(--ig-primary-500-contrast);
+  --background: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.close-diagnostics {
+  --foreground: var(--ig-gray-800);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.telemetry-downlink-banner {
+  height: max-content;
+  min-width: min-content;
+  flex-shrink: 0;
+}
+.false {
+  --fill-color-success: var(--ig-success-500);
+  --base-circle-color: var(--ig-surface-600);
+  --diameter: 48px;
+  width: max-content;
+  height: max-content;
+}
+.false_1 {
+  --fill-color-default: var(--ig-primary-500);
+  --base-circle-color: var(--ig-surface-600);
+  --diameter: 48px;
+  width: max-content;
+  height: max-content;
+}
+.false_2 {
+  --fill-color-info: var(--ig-info-500);
+  --base-circle-color: var(--ig-surface-600);
+  --diameter: 48px;
+  width: max-content;
+  height: max-content;
+}
+.false_3 {
+  --fill-color-warning: var(--ig-warn-500);
+  --base-circle-color: var(--ig-surface-600);
+  --diameter: 48px;
+  width: max-content;
+  height: max-content;
+}
+.tactical-priority {
+  width: max-content;
+  height: max-content;
+}
+.true {
+  --fill-color-warning: var(--ig-warn-500);
+  --track-color: var(--ig-surface-600);
+  width: 100%;
+  height: max-content;
+  min-width: 75px;
+  min-height: null;
+  max-width: 100%;
+}
+.true_1 {
+  --fill-color-danger: var(--ig-error-500);
+  --track-color: var(--ig-surface-600);
+  width: 100%;
+  height: max-content;
+  min-width: 75px;
+  min-height: null;
+  max-width: 100%;
+}
+.true_2 {
+  --fill-color-info: var(--ig-info-500);
+  --track-color: var(--ig-surface-600);
+  width: 100%;
+  height: max-content;
+  min-width: 75px;
+  min-height: null;
+  max-width: 100%;
+}
+.jarvis-neural-core-diagnostics {
+  position: absolute;
+}
+.snackbar {
+  height: max-content;
+  min-width: 344px;
+}
+.list {
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}

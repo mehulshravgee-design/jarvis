@@ -1,0 +1,351 @@
+<div class="column-layout placeholder-system-settings">
+  <div class="row-layout system-settings-page-frame">
+    <div class="column-layout system-settings-page-column">
+      <div class="column-layout system-settings-header-section">
+        <div class="row-layout system-settings-header-top-row">
+          <div class="column-layout system-settings-title-group">
+            <div class="row-layout system-settings-badge-row">
+              <h3 class="content">
+                System Settings
+              </h3>
+              <igx-badge value="Neural Engine v4.8" class="neural-engine-status-badge"></igx-badge>
+            </div>
+            <p class="system-settings-subtitle">
+              Configure JARVIS voice synthesizer modulation, operational security gates, neural behavioral thresholds, and holographic HUD telemetry.
+            </p>
+          </div>
+          <div class="row-layout system-settings-header-actions">
+            <button igxButton="outlined" type="button" (click)="safetyThresholdBanner.toggle()" class="toggle-safety-banner-btn">
+              <igx-icon class="icon">
+                verified_user
+              </igx-icon>
+              <span>Check Safety Thresholds</span>
+            </button>
+            <button igxButton="contained" type="button" (click)="settingsSavedSnackbar.toggle()" class="save-configuration-btn">
+              <igx-icon class="icon_1">
+                save
+              </igx-icon>
+              <span>Save Configuration</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <igx-banner #safetyThresholdBanner class="safety-threshold-banner">
+        <p>
+          All neural parameters verified and running within optimal safety thresholds.
+        </p>
+        <igx-banner-actions>
+          <button igxButton="flat" type="button" (click)="safetyThresholdBanner.toggle()" class="safety-banner-ack-btn">
+            Acknowledge
+          </button>
+        </igx-banner-actions>
+        <igx-icon class="safety-banner-icon">
+          verified_user
+        </igx-icon>
+      </igx-banner>
+      <div class="column-layout vocal-synthesizer-calibration-section">
+        <div class="column-layout vocal-calibration-header">
+          <h5 class="content">
+            Vocal Synthesizer Calibration
+          </h5>
+          <p class="ig-typography__body-2 system-settings-subtitle">
+            Tune speech synthesis cadence, select neural voice timbre models, and calibrate audio feedback waveforms.
+          </p>
+        </div>
+        <div class="row-layout vocal-calibration-content-row">
+          <div class="column-layout vocal-controls-column">
+            <igx-select type="border" [(ngModel)]="synthesizerVoiceProfile" class="state-writer-system-settings-voicecalibration-vocalprofileselect">
+              <igx-select-item value="JARVIS British AI Classic">
+                JARVIS British AI Classic
+              </igx-select-item>
+              <igx-select-item value="Friday Neural Synthesizer">
+                Friday Neural Synthesizer
+              </igx-select-item>
+              <igx-select-item value="Tactical Command Crisp">
+                Tactical Command Crisp
+              </igx-select-item>
+              <igx-select-item value="Analytical Neutral">
+                Analytical Neutral
+              </igx-select-item>
+              <label igxLabel>Synthesizer Voice Profile</label>
+            </igx-select>
+            <div class="column-layout speech-rate-slider-group">
+              <p class="ig-typography__body-2 state-writer-system-settings-voicecalibration-speechrateslider-label">
+                Voice Synthesis Speech Rate
+              </p>
+              <igx-slider [ngModel]="voiceSynthesisSpeechRate" [minValue]="0" [maxValue]="100" [step]="1" [secondaryTickLabels]="false" (ngModelChange)="voiceSynthesisSpeechRate = $event" class="state-writer-system-settings-voicecalibration-speechrateslider"></igx-slider>
+            </div>
+            <igx-select type="border" [(ngModel)]="value" class="state-writer-system-settings-voicecalibration-vocalprofileselect">
+              <igx-select-item value="1">
+                Avenger Command Hub Resonance
+              </igx-select-item>
+              <igx-select-item value="2">
+                Dry Acoustic Chamber
+              </igx-select-item>
+              <igx-select-item value="3">
+                Tactical Armor Intercom
+              </igx-select-item>
+              <igx-select-item value="4">
+                Subtle Studio Clarity
+              </igx-select-item>
+              <label igxLabel>Audio Feedback Acoustic Chamber</label>
+            </igx-select>
+            <igx-switch [(ngModel)]="checked" class="pitch-modulation-switch">
+              Dynamic Pitch Modulation on High Priority Directives
+            </igx-switch>
+            <div class="row-layout vocal-actions-row">
+              <button igxButton="outlined" type="button" (click)="clickStateActionSystemSettingsVocalSynthesizerCalibrationDefaultVoiceCalibration()" class="toggle-safety-banner-btn">
+                <igx-icon class="icon">
+                  restore
+                </igx-icon>
+                <span>Default Voice Calibration</span>
+              </button>
+              <button igxButton="contained" type="button" (click)="vocalAudioTestDialog.toggle()" class="save-configuration-btn">
+                <igx-icon class="icon_1">
+                  graphic_eq
+                </igx-icon>
+                <span>Calibrate Speech Audio</span>
+              </button>
+            </div>
+          </div>
+          <div class="column-layout vocal-summary-column">
+            <igx-card class="vocal-calibration-summary-card">
+              <igx-card-header>
+                <h3 igxCardHeaderTitle>
+                  Active Synthesis Profile
+                </h3>
+                <h5 igxCardHeaderSubtitle>
+                  Neural Core Audio Feedback
+                </h5>
+              </igx-card-header>
+              <igx-card-content>
+                <div class="column-layout vocal-summary-card-body">
+                  <div class="column-layout vocal-profile-summary-block">
+                    <p class="ig-typography__caption system-settings-subtitle">
+                      Active Vocal Timbre
+                    </p>
+                    <p class="vocal-profile-summary-reader">
+                      {{ synthesizerVoiceProfile }}
+                    </p>
+                  </div>
+                  <div class="column-layout vocal-profile-summary-block">
+                    <p class="ig-typography__caption system-settings-subtitle">
+                      Calibrated Cadence Rate
+                    </p>
+                    <p class="vocal-cadence-summary-reader">
+                      {{ voiceSynthesisSpeechRate }}
+                    </p>
+                  </div>
+                  <igx-linear-bar [value]="50" [animationDuration]="500" textAlign="center" [textTop]="true" class="vocal-cadence-meter"></igx-linear-bar>
+                  <p class="ig-typography__caption system-settings-subtitle">
+                    Neural acoustic waveform rendered in 48kHz floating-point precision with active harmonic suppression.
+                  </p>
+                </div>
+              </igx-card-content>
+              <igx-card-actions>
+                <ng-container igxStart></ng-container>
+                <ng-container igxEnd></ng-container>
+              </igx-card-actions>
+            </igx-card>
+          </div>
+        </div>
+      </div>
+      <div class="column-layout vocal-synthesizer-calibration-section">
+        <div class="column-layout vocal-calibration-header">
+          <h5 class="content">
+            Persona Protocols &amp; Security Gates
+          </h5>
+          <p class="ig-typography__body-2 system-settings-subtitle">
+            Set behavioral AI boundaries, gate autonomous neural execution, and enforce protocol overrides.
+          </p>
+        </div>
+        <div class="row-layout vocal-calibration-content-row">
+          <div class="column-layout vocal-controls-column">
+            <div class="column-layout vocal-calibration-header">
+              <igx-switch [(ngModel)]="protocolOverrideGateActive" class="pitch-modulation-switch">
+                Enable Protocol Override Gate
+              </igx-switch>
+              <p class="ig-typography__caption system-settings-subtitle">
+                Authorizes emergency command clearance and enables autonomous neural execution switches.
+              </p>
+            </div>
+            <div class="column-layout vocal-calibration-header">
+              <igx-switch [(ngModel)]="autonomousNeuralExecutionActive" class="pitch-modulation-switch">
+                Autonomous Neural Execution Toggle
+              </igx-switch>
+              <p class="ig-typography__caption system-settings-subtitle">
+                Allows JARVIS to independently issue tactical subroutines and system directives without prior confirmation.
+              </p>
+            </div>
+            <igx-switch [(ngModel)]="checked1" class="pitch-modulation-switch">
+              Continuous Directive Verification &amp; Cryptographic Telemetry
+            </igx-switch>
+            <igx-switch [(ngModel)]="checked2" class="pitch-modulation-switch">
+              Fail-Safe Core Temperature Throttling &amp; Auto-Shutdown
+            </igx-switch>
+            <div class="row-layout vocal-actions-row">
+              <button igxButton="outlined" type="button" (click)="clickStateActionSystemSettingsPersonaProtocolsSecurityGatesLockSecurityProtocols()" class="state-action-system-settings-persona-protocols-security-gates-lock-security-protocols">
+                <igx-icon class="icon_2">
+                  lock
+                </igx-icon>
+                <span>Lock Security Protocols</span>
+              </button>
+            </div>
+          </div>
+          <div class="column-layout vocal-summary-column">
+            <igx-card class="vocal-calibration-summary-card">
+              <igx-card-header>
+                <h3 igxCardHeaderTitle>
+                  Security Protocol Status
+                </h3>
+                <h5 igxCardHeaderSubtitle>
+                  Autonomous Clearance Tier
+                </h5>
+              </igx-card-header>
+              <igx-card-content>
+                <div class="column-layout vocal-summary-card-body">
+                  <div class="column-layout vocal-profile-summary-block">
+                    <p class="ig-typography__caption system-settings-subtitle">
+                      Autonomous Neural Clearance
+                    </p>
+                    <p class="vocal-profile-summary-reader">
+                      {{ autonomousNeuralExecutionActive }}
+                    </p>
+                  </div>
+                  <div class="column-layout security-badge-block">
+                    <igx-badge type="warning" value="Clearance: Tier 1 Operator Directives" class="neural-engine-status-badge"></igx-badge>
+                  </div>
+                  <p class="ig-typography__caption system-settings-subtitle">
+                    Gate override active state is logged in immutable Stark Industries diagnostic telemetry records.
+                  </p>
+                </div>
+              </igx-card-content>
+              <igx-card-actions>
+                <ng-container igxStart></ng-container>
+                <ng-container igxEnd></ng-container>
+              </igx-card-actions>
+            </igx-card>
+          </div>
+        </div>
+      </div>
+      <div class="column-layout vocal-synthesizer-calibration-section">
+        <div class="column-layout vocal-calibration-header">
+          <h5 class="content">
+            HUD Display &amp; Diagnostics Calibration
+          </h5>
+          <p class="ig-typography__body-2 system-settings-subtitle">
+            Configure holographic interface refresh frequencies, diagnostic telemetry overlays, and visualizer particle density.
+          </p>
+        </div>
+        <div class="row-layout vocal-calibration-content-row">
+          <div class="column-layout hud-dropdowns-column">
+            <igx-select type="border" [(ngModel)]="value1" class="state-writer-system-settings-voicecalibration-vocalprofileselect">
+              <igx-select-item value="1">
+                100ms - Ultra Low Latency Tactical
+              </igx-select-item>
+              <igx-select-item value="2">
+                250ms - High-Frequency Telemetry
+              </igx-select-item>
+              <igx-select-item value="3">
+                500ms - Real-Time Nominal
+              </igx-select-item>
+              <igx-select-item value="4">
+                1000ms - Power Conservation
+              </igx-select-item>
+              <label igxLabel>Telemetry HUD Refresh Frequency</label>
+            </igx-select>
+            <igx-select type="border" [(ngModel)]="value2" class="state-writer-system-settings-voicecalibration-vocalprofileselect">
+              <igx-select-item value="1">
+                Ultra High - 4K Volumetric Mesh
+              </igx-select-item>
+              <igx-select-item value="2">
+                High Density - Arc Reactor Nominal
+              </igx-select-item>
+              <igx-select-item value="3">
+                Balanced - Standard Quantum Mesh
+              </igx-select-item>
+              <igx-select-item value="4">
+                Minimal - Wireframe Only
+              </igx-select-item>
+              <label igxLabel>Holographic Particle Density</label>
+            </igx-select>
+          </div>
+          <div class="column-layout hud-switches-column">
+            <igx-switch [(ngModel)]="checked3" class="pitch-modulation-switch">
+              Overlay Live Core Temperature &amp; Diagnostics Watermark
+            </igx-switch>
+            <igx-switch [(ngModel)]="checked4" class="pitch-modulation-switch">
+              Display Real-Time Audio Waveform Visualizer on HUD
+            </igx-switch>
+            <igx-switch [(ngModel)]="checked5" class="pitch-modulation-switch">
+              Render Ambient Atmospheric &amp; Telemetry HUD Widget
+            </igx-switch>
+            <igx-switch class="pitch-modulation-switch">
+              Project Dynamic Transcription Subtitles on Retinal Feed
+            </igx-switch>
+          </div>
+        </div>
+        <div class="row-layout vocal-actions-row">
+          <button igxButton="outlined" type="button" (click)="settingsSavedSnackbar.toggle()" class="toggle-safety-banner-btn">
+            <igx-icon class="icon">
+              restart_alt
+            </igx-icon>
+            <span>Reset HUD Defaults</span>
+          </button>
+          <button igxButton="flat" type="button" (click)="settingsSavedSnackbar.toggle()" class="hud-export-telemetry-btn">
+            <igx-icon class="icon_2">
+              file_download
+            </igx-icon>
+            <span>Export Telemetry Diagnostics Log</span>
+          </button>
+        </div>
+      </div>
+      <igx-dialog [closeOnOutsideSelect]="true" #vocalAudioTestDialog class="vocal-audio-test-dialog">
+        <igx-dialog-title>
+          Vocal Audio Frequency &amp; Timbre Calibration
+        </igx-dialog-title>
+        <ng-container>
+          <div class="column-layout dialog-content-layout">
+            <p class="ig-typography__body-2 system-settings-subtitle">
+              Calibrate the audio waveform synthesizer using a test phrase. Listen to acoustic timbre, latency, and frequency modulation response.
+            </p>
+            <div class="column-layout dialog-sample-quote-box">
+              <p class="ig-typography__caption vocal-profile-summary-reader">
+                Test Synthesis Phrase
+              </p>
+              <p class="content">
+                "Good morning, Sir. All Mark VII diagnostic telemetry feeds are operational and within nominal parameters."
+              </p>
+            </div>
+            <div class="column-layout vocal-calibration-header">
+              <p class="ig-typography__caption system-settings-subtitle">
+                Audio Waveform Frequency Harmonics (Hz)
+              </p>
+              <igx-slider [ngModel]="value3" [minValue]="0" [maxValue]="100" [step]="5" [secondaryTickLabels]="false" (ngModelChange)="value3 = $event" class="state-writer-system-settings-voicecalibration-speechrateslider"></igx-slider>
+            </div>
+            <div class="row-layout dialog-playback-row">
+              <button igxButton="contained" type="button" (click)="settingsSavedSnackbar.toggle()" class="save-configuration-btn">
+                <igx-icon class="icon_1">
+                  volume_up
+                </igx-icon>
+                <span>Play Audio Waveform Sample</span>
+              </button>
+              <igx-badge type="info" value="48kHz Spatial Sound" class="neural-engine-status-badge"></igx-badge>
+            </div>
+          </div>
+        </ng-container>
+        <igx-dialog-actions>
+          <button igxButton="flat" type="button" (click)="vocalAudioTestDialog.toggle()" class="dialog-cancel-btn">
+            Cancel
+          </button>
+          <button igxButton="contained" type="button" (click)="vocalAudioTestDialog.toggle()" class="dialog-apply-btn">
+            Apply Timbre Calibration
+          </button>
+        </igx-dialog-actions>
+      </igx-dialog>
+      <igx-snackbar actionText="Dismiss" (clicked)="settingsSavedSnackbar.toggle()" #settingsSavedSnackbar class="settings-saved-snackbar">
+        System settings and voice synthesis parameters saved successfully.
+      </igx-snackbar>
+    </div>
+  </div>
+</div>

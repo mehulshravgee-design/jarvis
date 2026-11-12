@@ -1,0 +1,992 @@
+<div class="column-layout placeholder-tasks-and-schedule">
+  <div class="row-layout page-frame-row">
+    <div class="column-layout page-content-container">
+      <div class="column-layout directive-priority-grid-section">
+        <div class="row-layout directives-header-row">
+          <div class="column-layout directives-heading-block">
+            <h3 class="content">
+              Tactical Directives &amp; Schedule
+            </h3>
+            <p class="text">
+              Coordinate active mission directives, configure telemetry recurrence schedules, and monitor completed operational tasks across JARVIS neural subsystems.
+            </p>
+          </div>
+          <div class="row-layout directives-actions-row">
+            <button igxButton="contained" type="button" (click)="createDirectiveDialog.toggle()" class="btn-create-directive-2">
+              <igx-icon class="icon">
+                add
+              </igx-icon>
+              <span>Create Directive</span>
+            </button>
+            <button igxButton="outlined" type="button" (click)="datePhotoScannerDialog.toggle()" class="add-reminder">
+              <igx-icon class="icon_1">
+                alarm_add
+              </igx-icon>
+              <span>Add Reminder</span>
+            </button>
+            <button igxButton="flat" type="button" (click)="tacticalQueueSnackbar.toggle()" class="purge-dismissed">
+              <igx-icon class="icon_2">
+                cleaning_services
+              </igx-icon>
+              <span>Purge Dismissed</span>
+            </button>
+          </div>
+        </div>
+        <div class="row-layout directives-filter-chips-row">
+          <igx-chip class="all-directives-1-4">
+            <igx-prefix>
+              <igx-icon class="icon_3">
+                place
+              </igx-icon>
+            </igx-prefix>
+            All Directives (14)
+          </igx-chip>
+          <igx-chip class="all-directives-1-4">
+            <igx-prefix>
+              <igx-icon class="icon_3">
+                place
+              </igx-icon>
+            </igx-prefix>
+            Critical Priority (4)
+          </igx-chip>
+          <igx-chip class="all-directives-1-4">
+            <igx-prefix>
+              <igx-icon class="icon_3">
+                place
+              </igx-icon>
+            </igx-prefix>
+            Telemetry &amp; Diagnostics (5)
+          </igx-chip>
+          <igx-chip class="all-directives-1-4">
+            <igx-prefix>
+              <igx-icon class="icon_3">
+                place
+              </igx-icon>
+            </igx-prefix>
+            Neural Engine &amp; Speech (3)
+          </igx-chip>
+          <igx-chip class="all-directives-1-4">
+            <igx-prefix>
+              <igx-icon class="icon_3">
+                place
+              </igx-icon>
+            </igx-prefix>
+            Protocol Overrides (2)
+          </igx-chip>
+        </div>
+        <igx-grid [data]="taskDirective2TaskDirective" primaryKey="id" [allowFiltering]="true" filterMode="excelStyleFilter" width="100%" class="tactical-directives-grid">
+          <igx-column field="id" dataType="number" header="id" [filterable]="true" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="title" dataType="string" header="title" [filterable]="true" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="priority" dataType="string" header="priority" [filterable]="true" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="isCompleted" dataType="boolean" header="isCompleted" [filterable]="true" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="estimatedMinutes" dataType="number" header="estimatedMinutes" [filterable]="true" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="dueDate" dataType="date" header="dueDate" [filterable]="true" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+        </igx-grid>
+      </div>
+      <div class="column-layout directive-priority-grid-section">
+        <div class="column-layout analytics-header-block">
+          <h5 class="content">
+            Directive Duration &amp; Telemetry Analytics
+          </h5>
+          <p class="ig-typography__body-2 text">
+            Real-time compute allocations and estimated execution intervals calculated by the JARVIS Neural Engine cluster.
+          </p>
+        </div>
+        <div class="row-layout kpi-metrics-row">
+          <igx-card class="total-time-kpi-card">
+            <igx-card-header>
+              <div igxCardThumbnail>
+                <igx-avatar shape="circle" class="avatar avatar_5">
+                  <igx-icon class="icon">
+                    timer
+                  </igx-icon>
+                </igx-avatar>
+              </div>
+              <h3 igxCardHeaderTitle>
+                Total Directive Duration
+              </h3>
+              <h5 igxCardHeaderSubtitle>
+                Allocated runtime
+              </h5>
+            </igx-card-header>
+            <igx-card-content>
+              <div class="column-layout column-layout_1">
+                <h4 class="content">
+                  385 Mins
+                </h4>
+                <div class="row-layout row-layout_1">
+                  <p class="ig-typography__caption allocated">
+                    +14% allocated
+                  </p>
+                  <p class="ig-typography__caption text">
+                    vs prior mission cycle
+                  </p>
+                </div>
+              </div>
+            </igx-card-content>
+            <igx-card-actions>
+              <ng-container igxStart></ng-container>
+              <ng-container igxEnd></ng-container>
+            </igx-card-actions>
+          </igx-card>
+          <igx-card class="total-time-kpi-card">
+            <igx-card-header>
+              <div igxCardThumbnail>
+                <igx-avatar shape="circle" class="avatar_1 avatar_1_1">
+                  <igx-icon class="icon_4">
+                    priority_high
+                  </igx-icon>
+                </igx-avatar>
+              </div>
+              <h3 igxCardHeaderTitle>
+                Critical Directives
+              </h3>
+              <h5 igxCardHeaderSubtitle>
+                Immediate execution
+              </h5>
+            </igx-card-header>
+            <igx-card-content>
+              <div class="column-layout column-layout_1">
+                <h4 class="content">
+                  4 Active
+                </h4>
+                <div class="row-layout row-layout_1">
+                  <p class="ig-typography__caption requires-voice-ack">
+                    Requires Voice Ack
+                  </p>
+                  <p class="ig-typography__caption text">
+                    Standby ready
+                  </p>
+                </div>
+              </div>
+            </igx-card-content>
+            <igx-card-actions>
+              <ng-container igxStart></ng-container>
+              <ng-container igxEnd></ng-container>
+            </igx-card-actions>
+          </igx-card>
+          <igx-card class="total-time-kpi-card">
+            <igx-card-header>
+              <div igxCardThumbnail>
+                <igx-avatar shape="circle" class="avatar_2 avatar_2_1">
+                  <igx-icon class="icon_5">
+                    psychology
+                  </igx-icon>
+                </igx-avatar>
+              </div>
+              <h3 igxCardHeaderTitle>
+                Neural Engine Load
+              </h3>
+              <h5 igxCardHeaderSubtitle>
+                Compute allocation
+              </h5>
+            </igx-card-header>
+            <igx-card-content>
+              <div class="column-layout column-layout_1">
+                <h4 class="content">
+                  42.8%
+                </h4>
+                <div class="row-layout row-layout_1">
+                  <p class="ig-typography__caption optimal-throughput">
+                    Optimal throughput
+                  </p>
+                  <p class="ig-typography__caption text">
+                    Core Temp 41.2°C
+                  </p>
+                </div>
+              </div>
+            </igx-card-content>
+            <igx-card-actions>
+              <ng-container igxStart></ng-container>
+              <ng-container igxEnd></ng-container>
+            </igx-card-actions>
+          </igx-card>
+          <igx-card class="total-time-kpi-card">
+            <igx-card-header>
+              <div igxCardThumbnail>
+                <igx-avatar shape="circle" class="avatar_3 avatar_3_1">
+                  <igx-icon class="icon_6">
+                    check_circle
+                  </igx-icon>
+                </igx-avatar>
+              </div>
+              <h3 igxCardHeaderTitle>
+                Schedule Reliability
+              </h3>
+              <h5 igxCardHeaderSubtitle>
+                On-time sync rate
+              </h5>
+            </igx-card-header>
+            <igx-card-content>
+              <div class="column-layout column-layout_1">
+                <h4 class="content">
+                  98.4%
+                </h4>
+                <div class="row-layout row-layout_1">
+                  <p class="ig-typography__caption optimal-throughput">
+                    +2.1% pace
+                  </p>
+                  <p class="ig-typography__caption text">
+                    Zero missed targets
+                  </p>
+                </div>
+              </div>
+            </igx-card-content>
+            <igx-card-actions>
+              <ng-container igxStart></ng-container>
+              <ng-container igxEnd></ng-container>
+            </igx-card-actions>
+          </igx-card>
+        </div>
+        <apx-chart [series]="series" [colors]="colors" [chart]="chart" [plotOptions]="plotOptions" [title]="title" [xaxis]="xaxis" [yaxis]="yaxis" [theme]="theme" [legend]="legend" [markers]="markers" [dataLabels]="dataLabels" class="directive-duration-apex-chart"></apx-chart>
+      </div>
+      <div class="column-layout directive-priority-grid-section">
+        <div class="column-layout analytics-header-block">
+          <h5 class="content">
+            Tactical Reminders &amp; Pinned Directive Notes
+          </h5>
+          <p class="ig-typography__body-2 text">
+            Recurring telemetry alerts synchronized with classified mission logs and autonomous HUD override contingencies.
+          </p>
+        </div>
+        <div class="row-layout deck-two-column-row">
+          <div class="column-layout reminders-pane-column">
+            <div class="row-layout reminders-pane-header">
+              <div class="column-layout column-layout_2">
+                <h6 class="content">
+                  Scheduled Telemetry Reminders
+                </h6>
+                <p class="ig-typography__caption text">
+                  Automated recurring alarms and sensory sweeps
+                </p>
+              </div>
+              <igx-badge type="info" value="5 Active" class="active"></igx-badge>
+            </div>
+            <igx-list class="tactical-reminders-list">
+              <igx-list-item [selected]="this.tacticalRemindersListSelectedItem != null && this.tacticalRemindersListSelectedItem === '0'" (click)="tacticalRemindersListSelectedItem = '0'" class="reminder-item-1-2">
+                <span igxListThumbnail>
+                  <igx-avatar shape="circle" class="avatar avatar_6">
+                    <igx-icon class="icon">
+                      thermostat
+                    </igx-icon>
+                  </igx-avatar>
+                </span>
+                <span igxListLineTitle>Core Temperature Diagnostics Scan</span>
+                <span igxListLineSubTitle>Telemetry · Repeats every 2 hours · Next trigger 14:00 UTC</span>
+                <span igxListAction>
+                  <igx-icon class="icon_7">
+                    notifications_active
+                  </igx-icon>
+                </span>
+              </igx-list-item>
+              <igx-list-item [selected]="this.tacticalRemindersListSelectedItem != null && this.tacticalRemindersListSelectedItem === '1'" (click)="tacticalRemindersListSelectedItem = '1'" class="reminder-item-1-2">
+                <span igxListThumbnail>
+                  <igx-avatar shape="circle" class="avatar_2 avatar_2_2">
+                    <igx-icon class="icon_5">
+                      graphic_eq
+                    </igx-icon>
+                  </igx-avatar>
+                </span>
+                <span igxListLineTitle>Audio Waveform Synthesizer Calibration</span>
+                <span igxListLineSubTitle>Voice Synthesizer · Repeats every 6 hours · Next trigger 18:30 UTC</span>
+                <span igxListAction>
+                  <igx-icon class="icon_7">
+                    notifications_active
+                  </igx-icon>
+                </span>
+              </igx-list-item>
+              <igx-list-item [selected]="this.tacticalRemindersListSelectedItem != null && this.tacticalRemindersListSelectedItem === '2'" (click)="tacticalRemindersListSelectedItem = '2'" class="reminder-item-1-2">
+                <span igxListThumbnail>
+                  <igx-avatar shape="circle" class="avatar_3 avatar_3_2">
+                    <igx-icon class="icon_6">
+                      security
+                    </igx-icon>
+                  </igx-avatar>
+                </span>
+                <span igxListLineTitle>Perimeter Defense &amp; Armor Diagnostics</span>
+                <span igxListLineSubTitle>System Diagnostics · Repeats every 4 hours · Next trigger 16:15 UTC</span>
+                <span igxListAction>
+                  <igx-icon class="icon_7">
+                    notifications_active
+                  </igx-icon>
+                </span>
+              </igx-list-item>
+              <igx-list-item [selected]="this.tacticalRemindersListSelectedItem != null && this.tacticalRemindersListSelectedItem === '3'" (click)="tacticalRemindersListSelectedItem = '3'" class="reminder-item-1-2">
+                <span igxListThumbnail>
+                  <igx-avatar shape="circle" class="avatar avatar_7">
+                    <igx-icon class="icon">
+                      memory
+                    </igx-icon>
+                  </igx-avatar>
+                </span>
+                <span igxListLineTitle>Neural Engine Cache Memory Purge</span>
+                <span igxListLineSubTitle>Directive · Repeats every 12 hours · Next trigger 22:00 UTC</span>
+                <span igxListAction>
+                  <igx-icon class="icon_8">
+                    alarm
+                  </igx-icon>
+                </span>
+              </igx-list-item>
+              <igx-list-item [selected]="this.tacticalRemindersListSelectedItem != null && this.tacticalRemindersListSelectedItem === '4'" (click)="tacticalRemindersListSelectedItem = '4'" class="reminder-item-1-2">
+                <span igxListThumbnail>
+                  <igx-avatar shape="circle" class="avatar_1 avatar_1_2">
+                    <igx-icon class="icon_4">
+                      satellite_alt
+                    </igx-icon>
+                  </igx-avatar>
+                </span>
+                <span igxListLineTitle>Stark Satellite Uplink Ping</span>
+                <span igxListLineSubTitle>Protocol Override · Repeats every 1 hour · Next trigger 13:00 UTC</span>
+                <span igxListAction>
+                  <igx-icon class="icon_9">
+                    sync
+                  </igx-icon>
+                </span>
+              </igx-list-item>
+            </igx-list>
+          </div>
+          <div class="column-layout reminders-pane-column">
+            <div class="row-layout reminders-pane-header">
+              <div class="column-layout column-layout_2">
+                <h6 class="content">
+                  Pinned Mission Directive Notes
+                </h6>
+                <p class="ig-typography__caption text">
+                  Encrypted logs and tactical directives saved to local store
+                </p>
+              </div>
+              <igx-badge value="3 Pinned" class="active"></igx-badge>
+            </div>
+            <div class="column-layout notes-cards-stack">
+              <igx-card class="reactor-note-card">
+                <igx-card-header>
+                  <div igxCardThumbnail>
+                    <igx-avatar shape="circle" class="avatar avatar_8">
+                      <igx-icon class="icon">
+                        bolt
+                      </igx-icon>
+                    </igx-avatar>
+                  </div>
+                  <h3 igxCardHeaderTitle>
+                    Mark VII Arc Reactor Output
+                  </h3>
+                  <h5 igxCardHeaderSubtitle>
+                    Telemetry Note · Modified 08:30 Today
+                  </h5>
+                </igx-card-header>
+                <igx-card-content>
+                  <div class="column-layout column-layout_3">
+                    <p class="ig-typography__body-2 content">
+                      Core temperature holding steady at 41.8°C with uninhibited palladium flow. Maintain diagnostic cycle at 45-minute intervals during high thruster discharge.
+                    </p>
+                    <div class="row-layout row-layout_2">
+                      <igx-badge type="info" value="ReactorTelemetry" class="active"></igx-badge>
+                      <p class="ig-typography__caption text">
+                        Pinned by Tony Stark
+                      </p>
+                    </div>
+                  </div>
+                </igx-card-content>
+                <igx-card-actions>
+                  <ng-container igxStart>
+                    <button igxButton="flat" type="button" (click)="tacticalQueueSnackbar.toggle()" class="view-directive-details">
+                      View Directive Details
+                    </button>
+                  </ng-container>
+                  <ng-container igxEnd></ng-container>
+                </igx-card-actions>
+              </igx-card>
+              <igx-card class="reactor-note-card">
+                <igx-card-header>
+                  <div igxCardThumbnail>
+                    <igx-avatar shape="circle" class="avatar_4 avatar_4_1">
+                      <igx-icon class="icon_10">
+                        science
+                      </igx-icon>
+                    </igx-avatar>
+                  </div>
+                  <h3 igxCardHeaderTitle>
+                    Vibranium Synthesis Protocol
+                  </h3>
+                  <h5 igxCardHeaderSubtitle>
+                    Directive Note · Modified Yesterday
+                  </h5>
+                </igx-card-header>
+                <igx-card-content>
+                  <div class="column-layout column-layout_3">
+                    <p class="ig-typography__body-2 content">
+                      Molecular composition simulations verified via Neural Engine cluster. Sub-atomic lattice stability sustained up to 4,200 Kelvins under vacuum containment.
+                    </p>
+                    <div class="row-layout row-layout_2">
+                      <igx-badge type="info" value="NeuralEngine" class="active"></igx-badge>
+                      <p class="ig-typography__caption text">
+                        Pinned by JARVIS
+                      </p>
+                    </div>
+                  </div>
+                </igx-card-content>
+                <igx-card-actions>
+                  <ng-container igxStart>
+                    <button igxButton="flat" type="button" (click)="tacticalQueueSnackbar.toggle()" class="view-directive-details">
+                      View Directive Details
+                    </button>
+                  </ng-container>
+                  <ng-container igxEnd></ng-container>
+                </igx-card-actions>
+              </igx-card>
+              <igx-card class="reactor-note-card">
+                <igx-card-header>
+                  <div igxCardThumbnail>
+                    <igx-avatar shape="circle" class="avatar_1 avatar_1_3">
+                      <igx-icon class="icon_4">
+                        tune
+                      </igx-icon>
+                    </igx-avatar>
+                  </div>
+                  <h3 igxCardHeaderTitle>
+                    Autonomous HUD Override Contingency
+                  </h3>
+                  <h5 igxCardHeaderSubtitle>
+                    Protocol Note · Modified 2 Days Ago
+                  </h5>
+                </igx-card-header>
+                <igx-card-content>
+                  <div class="column-layout column-layout_3">
+                    <p class="ig-typography__body-2 content">
+                      In the event of optical interference or EMP burst, voice synthesizer switches to direct sub-harmonic audio waveform feedback directly into helmet acoustics.
+                    </p>
+                    <div class="row-layout row-layout_2">
+                      <igx-badge type="warning" value="ProtocolOverride" class="active"></igx-badge>
+                      <p class="ig-typography__caption text">
+                        Pinned by Protocol Override
+                      </p>
+                    </div>
+                  </div>
+                </igx-card-content>
+                <igx-card-actions>
+                  <ng-container igxStart>
+                    <button igxButton="flat" type="button" (click)="tacticalQueueSnackbar.toggle()" class="view-directive-details">
+                      View Directive Details
+                    </button>
+                  </ng-container>
+                  <ng-container igxEnd></ng-container>
+                </igx-card-actions>
+              </igx-card>
+            </div>
+          </div>
+        </div>
+      </div>
+      <igx-dialog [closeOnOutsideSelect]="true" #createDirectiveDialog class="create-directive-dialog">
+        <igx-dialog-title>
+          Initialize Tactical Directive
+        </igx-dialog-title>
+        <ng-container>
+          <div class="column-layout column-layout_4">
+            <p class="ig-typography__body-2 text_1">
+              Configure parameters for a new operational mission directive. JARVIS will assign neural threads and queue telemetry tracking.
+            </p>
+            <igx-input-group type="border" class="user-input_1">
+              <igx-prefix>
+                <igx-icon class="icon_8">
+                  assignment
+                </igx-icon>
+              </igx-prefix>
+              <input type="text" [(ngModel)]="value" placeholder="e.g., Calibrate Flight Stabilizer Thrusters" required="true" igxInput #igxInput="igxInput" />
+              <label igxLabel>Directive Title</label>
+              @if (!igxInput.isValid && igxInput.nativeElement.validity.valueMissing) {
+                <igx-hint>This field is required</igx-hint>
+              }
+            </igx-input-group>
+            <div class="row-layout row-layout_3">
+              <igx-select type="border" placeholder="Select Priority" required="true" class="user-input">
+                <igx-select-item value="1">
+                  Critical (Level 1)
+                </igx-select-item>
+                <igx-select-item value="2">
+                  High (Level 2)
+                </igx-select-item>
+                <igx-select-item value="3">
+                  Standard (Level 3)
+                </igx-select-item>
+                <igx-select-item value="4">
+                  Low (Level 4)
+                </igx-select-item>
+                <label igxLabel>Priority Level</label>
+              </igx-select>
+              <igx-input-group type="border" class="user-input">
+                <igx-prefix>
+                  <igx-icon class="icon_8">
+                    schedule
+                  </igx-icon>
+                </igx-prefix>
+                <input type="number" [ngModel]="value1" placeholder="45" required="true" igxInput (ngModelChange)="value1 = stringToNumber($event)" #igxInput1="igxInput" />
+                <label igxLabel>Estimated Duration (Minutes)</label>
+                @if (!igxInput1.isValid && igxInput1.nativeElement.validity.valueMissing) {
+                  <igx-hint>This field is required</igx-hint>
+                }
+              </igx-input-group>
+            </div>
+            <igx-date-picker placeholder="Select due date" required="true" type="border" class="target-completion-due-date">
+              <label igxLabel>Target Completion Due Date</label>
+            </igx-date-picker>
+            <igx-input-group type="border" class="user-input_1">
+              <label igxLabel>Tactical Constraints &amp; Directives</label>
+              <textarea placeholder="Specify sub-system telemetry parameters, flight parameters, or fail-safe thresholds..." igxInput></textarea>
+            </igx-input-group>
+          </div>
+        </ng-container>
+        <igx-dialog-actions>
+          <button igxButton="outlined" type="button" (click)="createDirectiveDialog.toggle()" class="cancel">
+            Cancel
+          </button>
+          <button igxButton="contained" type="button" (click)="createDirectiveDialog.toggle()" class="initialize-directive">
+            Initialize Directive
+          </button>
+        </igx-dialog-actions>
+      </igx-dialog>
+      <igx-dialog [closeOnOutsideSelect]="true" #createReminderDialog class="create-directive-dialog">
+        <igx-dialog-title>
+          Schedule Tactical Reminder Alert
+        </igx-dialog-title>
+        <ng-container>
+          <div class="column-layout column-layout_4">
+            <p class="ig-typography__body-2 text_1">
+              Set recurring telemetry thresholds or periodic diagnostics triggers to be synthesized into helmet audio waveforms.
+            </p>
+            <igx-input-group type="border" class="user-input_1">
+              <igx-prefix>
+                <igx-icon class="icon_8">
+                  alarm
+                </igx-icon>
+              </igx-prefix>
+              <input type="text" [(ngModel)]="value2" placeholder="e.g., Core Temperature Diagnostics Scan" required="true" igxInput #igxInput2="igxInput" />
+              <label igxLabel>Alert Label</label>
+              @if (!igxInput2.isValid && igxInput2.nativeElement.validity.valueMissing) {
+                <igx-hint>This field is required</igx-hint>
+              }
+            </igx-input-group>
+            <div class="row-layout row-layout_3">
+              <igx-select type="border" placeholder="Select Operational Category" required="true" class="user-input">
+                <igx-select-item value="1">
+                  Telemetry
+                </igx-select-item>
+                <igx-select-item value="2">
+                  Voice Synthesizer
+                </igx-select-item>
+                <igx-select-item value="3">
+                  System Diagnostics
+                </igx-select-item>
+                <igx-select-item value="4">
+                  Protocol Override
+                </igx-select-item>
+                <igx-select-item value="5">
+                  Neural Engine
+                </igx-select-item>
+                <label igxLabel>Operational Category</label>
+              </igx-select>
+              <igx-input-group type="border" class="user-input">
+                <igx-prefix>
+                  <igx-icon class="icon_8">
+                    repeat
+                  </igx-icon>
+                </igx-prefix>
+                <input type="number" [ngModel]="value3" placeholder="4" required="true" igxInput (ngModelChange)="value3 = stringToNumber($event)" #igxInput3="igxInput" />
+                <label igxLabel>Repeat Interval (Hours)</label>
+                @if (!igxInput3.isValid && igxInput3.nativeElement.validity.valueMissing) {
+                  <igx-hint>This field is required</igx-hint>
+                }
+              </igx-input-group>
+            </div>
+            <igx-date-picker placeholder="Select first trigger date" required="true" type="border" class="target-completion-due-date">
+              <label igxLabel>First Trigger Timestamp</label>
+            </igx-date-picker>
+          </div>
+        </ng-container>
+        <igx-dialog-actions>
+          <button igxButton="outlined" type="button" (click)="createReminderDialog.toggle()" class="cancel">
+            Cancel
+          </button>
+          <button igxButton="contained" type="button" (click)="createReminderDialog.toggle()" class="initialize-directive">
+            Arm Reminder
+          </button>
+        </igx-dialog-actions>
+      </igx-dialog>
+      <igx-snackbar actionText="Dismiss" (clicked)="tacticalQueueSnackbar.toggle()" #tacticalQueueSnackbar class="tactical-queue-snackbar">
+        Mission directive updated in the master tactical queue.
+      </igx-snackbar>
+      <div class="column-layout directive-priority-grid-section">
+        <div class="row-layout section-header-row">
+          <div class="column-layout directives-heading-block">
+            <h3 class="content">
+              Global Morning Briefing &amp; Optical Date Capture
+            </h3>
+            <p class="text">
+              Automated universal world news reminders for cross-border events paired with computer-vision photo scanning to import milestone dates directly into your tactical directive agenda.
+            </p>
+          </div>
+          <div class="row-layout directives-actions-row">
+            <button igxButton="contained" type="button" (click)="datePhotoScannerDialog.toggle()" class="btn-create-directive-2">
+              <igx-icon class="icon">
+                photo_camera
+              </igx-icon>
+              <span>Take Photo of Dates</span>
+            </button>
+            <button igxButton="outlined" type="button" (click)="morningBriefingSyncSnackbar.toggle()" class="sync-dates-button">
+              <igx-icon class="icon_11">
+                sync
+              </igx-icon>
+              <span>Sync Dates to Schedule</span>
+            </button>
+          </div>
+        </div>
+        <div class="row-layout split-layout-row">
+          <div class="column-layout morning-news-briefing-column">
+            <div class="column-layout morning-controls-container">
+              <div class="row-layout briefing-header-row">
+                <div class="column-layout briefing-title-box">
+                  <h6 class="content">
+                    Universal Dawn Intelligence Dispatch
+                  </h6>
+                  <p class="ig-typography__caption text">
+                    Essential worldwide developments broadcasted to every nation
+                  </p>
+                </div>
+                <igx-badge type="info" value="Universal Wire" class="active"></igx-badge>
+              </div>
+              <div class="row-layout switch-and-delivery-time-row">
+                <igx-switch [(ngModel)]="morningNewsAlertEnabled" class="morning-global-news-alert-switch">
+                  Morning Global News Alert
+                </igx-switch>
+                <igx-select type="border" [(ngModel)]="value4" class="digest-delivery-time-select">
+                  <igx-prefix>
+                    <igx-icon class="icon_12">
+                      schedule
+                    </igx-icon>
+                  </igx-prefix>
+                  <igx-select-item value="1">
+                    06:00 AM UTC (Dawn Wave)
+                  </igx-select-item>
+                  <igx-select-item value="2">
+                    07:00 AM UTC (Global Baseline)
+                  </igx-select-item>
+                  <igx-select-item value="3">
+                    08:00 AM UTC (Business Sync)
+                  </igx-select-item>
+                  <igx-select-item value="4">
+                    09:00 AM UTC (Standard Wave)
+                  </igx-select-item>
+                  <label igxLabel>Digest Delivery Time</label>
+                </igx-select>
+              </div>
+              <div class="row-layout scope-chips-row">
+                <igx-chip class="treaty-scope-chip">
+                  <igx-prefix>
+                    <igx-icon class="icon_13">
+                      gavel
+                    </igx-icon>
+                  </igx-prefix>
+                  Cross-Border Treaties
+                </igx-chip>
+                <igx-chip class="treaty-scope-chip">
+                  <igx-prefix>
+                    <igx-icon class="icon_14">
+                      health_and_safety
+                    </igx-icon>
+                  </igx-prefix>
+                  WHO Alerts
+                </igx-chip>
+                <igx-chip class="treaty-scope-chip">
+                  <igx-prefix>
+                    <igx-icon class="icon_15">
+                      public
+                    </igx-icon>
+                  </igx-prefix>
+                  UN Summit Directives
+                </igx-chip>
+                <igx-chip class="treaty-scope-chip">
+                  <igx-prefix>
+                    <igx-icon class="icon_12">
+                      satellite_alt
+                    </igx-icon>
+                  </igx-prefix>
+                  Planetary Defense
+                </igx-chip>
+              </div>
+            </div>
+            <div class="column-layout global-wire-container">
+              <div class="row-layout wire-title-row">
+                <h6 class="content">
+                  Universal Global Wire Feed
+                </h6>
+                <p class="ig-typography__caption allocated">
+                  Synced 06:00 UTC
+                </p>
+              </div>
+              <igx-list class="tactical-reminders-list">
+                <igx-list-item [selected]="this.universalHeadlinesListSelectedItem != null && this.universalHeadlinesListSelectedItem === '0'" (click)="universalHeadlinesListSelectedItem = '0'" class="reminder-item-1-2">
+                  <span igxListThumbnail>
+                    <igx-avatar shape="circle" class="avatar avatar_9">
+                      <igx-icon class="icon">
+                        public
+                      </igx-icon>
+                    </igx-avatar>
+                  </span>
+                  <span igxListLineTitle>UN Multilateral AI Governance &amp; Cybersecurity Treaty</span>
+                  <span igxListLineSubTitle>193 sovereign states ratify quantum encryption and critical infrastructure safety protocol.</span>
+                  <span igxListAction>
+                    <igx-icon class="badge-1">
+                      priority_high
+                    </igx-icon>
+                  </span>
+                </igx-list-item>
+                <igx-list-item [selected]="this.universalHeadlinesListSelectedItem != null && this.universalHeadlinesListSelectedItem === '1'" (click)="universalHeadlinesListSelectedItem = '1'" class="reminder-item-1-2">
+                  <span igxListThumbnail>
+                    <igx-avatar shape="circle" class="avatar_2 avatar_2_3">
+                      <igx-icon class="icon_5">
+                        health_and_safety
+                      </igx-icon>
+                    </igx-avatar>
+                  </span>
+                  <span igxListLineTitle>WHO Global Bio-Surveillance Early Warning Protocol</span>
+                  <span igxListLineSubTitle>Unified cross-border pathogen detection telemetry activated across all international transit hubs.</span>
+                  <span igxListAction>
+                    <igx-icon class="badge-2">
+                      notifications_active
+                    </igx-icon>
+                  </span>
+                </igx-list-item>
+                <igx-list-item [selected]="this.universalHeadlinesListSelectedItem != null && this.universalHeadlinesListSelectedItem === '2'" (click)="universalHeadlinesListSelectedItem = '2'" class="reminder-item-1-2">
+                  <span igxListThumbnail>
+                    <igx-avatar shape="circle" class="avatar_3 avatar_3_3">
+                      <igx-icon class="icon_6">
+                        shield
+                      </igx-icon>
+                    </igx-avatar>
+                  </span>
+                  <span igxListLineTitle>Universal Maritime Security &amp; Grain Corridor Accord</span>
+                  <span igxListLineSubTitle>Multilateral naval safety guarantee signed ensuring open commercial shipping channels across all waters.</span>
+                  <span igxListAction>
+                    <igx-icon class="badge-3">
+                      verified
+                    </igx-icon>
+                  </span>
+                </igx-list-item>
+                <igx-list-item [selected]="this.universalHeadlinesListSelectedItem != null && this.universalHeadlinesListSelectedItem === '3'" (click)="universalHeadlinesListSelectedItem = '3'" class="reminder-item-1-2">
+                  <span igxListThumbnail>
+                    <igx-avatar shape="circle" class="avatar_1 avatar_1_4">
+                      <igx-icon class="icon_4">
+                        satellite_alt
+                      </igx-icon>
+                    </igx-avatar>
+                  </span>
+                  <span igxListLineTitle>International Planetary Defense &amp; Solar Flare Advisory</span>
+                  <span igxListLineSubTitle>International space agencies broadcast coronal telemetry warning to protect sovereign energy grids.</span>
+                  <span igxListAction>
+                    <igx-icon class="badge-4">
+                      warning
+                    </igx-icon>
+                  </span>
+                </igx-list-item>
+              </igx-list>
+            </div>
+          </div>
+          <div class="column-layout morning-news-briefing-column">
+            <igx-card class="optical-date-scanner-card">
+              <igx-card-media height="200px">
+                <img src="/assets/handwritten-physical-planner-a-f050e03b2596.png" alt="" class="image" />
+              </igx-card-media>
+              <igx-card-header>
+                <div igxCardThumbnail>
+                  <igx-avatar shape="rounded" class="avatar avatar_10">
+                    <igx-icon class="icon">
+                      document_scanner
+                    </igx-icon>
+                  </igx-avatar>
+                </div>
+                <h3 igxCardHeaderTitle>
+                  Optical Date Scanner: Calendar &amp; Notes Capture
+                </h3>
+                <h5 igxCardHeaderSubtitle>
+                  Neural vision extraction active • 98.4% OCR confidence
+                </h5>
+              </igx-card-header>
+              <igx-card-content>
+                <div class="column-layout scanner-card-content-box">
+                  <div class="row-layout wire-title-row">
+                    <h6 class="content">
+                      Extracted Dates from Photo
+                    </h6>
+                    <igx-chip class="treaty-scope-chip">
+                      <igx-prefix>
+                        <igx-icon class="icon_14">
+                          auto_awesome
+                        </igx-icon>
+                      </igx-prefix>
+                      4 Detected
+                    </igx-chip>
+                  </div>
+                  <div class="column-layout global-wire-container">
+                    <div class="row-layout date-row-1">
+                      <div class="row-layout date-label-1">
+                        <igx-badge value="OCT 28" class="active"></igx-badge>
+                        <p class="ig-typography__body-2 date-text-1">
+                          Global AI Summit Keynote Directive
+                        </p>
+                      </div>
+                      <igx-chip class="treaty-scope-chip">
+                        <igx-prefix>
+                          <igx-icon class="icon_3">
+                            place
+                          </igx-icon>
+                        </igx-prefix>
+                        09:00 UTC
+                      </igx-chip>
+                    </div>
+                    <div class="row-layout date-row-1">
+                      <div class="row-layout date-label-1">
+                        <igx-badge type="info" value="NOV 04" class="active"></igx-badge>
+                        <p class="ig-typography__body-2 date-text-1">
+                          International Trade &amp; Tariff Audit
+                        </p>
+                      </div>
+                      <igx-chip class="treaty-scope-chip">
+                        <igx-prefix>
+                          <igx-icon class="icon_3">
+                            place
+                          </igx-icon>
+                        </igx-prefix>
+                        14:30 UTC
+                      </igx-chip>
+                    </div>
+                    <div class="row-layout date-row-1">
+                      <div class="row-layout date-label-1">
+                        <igx-badge type="warning" value="NOV 12" class="active"></igx-badge>
+                        <p class="ig-typography__body-2 date-text-1">
+                          Cross-Border Cyber Defense Milestone
+                        </p>
+                      </div>
+                      <igx-chip class="treaty-scope-chip">
+                        <igx-prefix>
+                          <igx-icon class="icon_3">
+                            place
+                          </igx-icon>
+                        </igx-prefix>
+                        18:00 UTC
+                      </igx-chip>
+                    </div>
+                    <div class="row-layout date-row-1">
+                      <div class="row-layout date-label-1">
+                        <igx-badge type="success" value="NOV 25" class="active"></igx-badge>
+                        <p class="ig-typography__body-2 date-text-1">
+                          Sovereign Data Treaty Review
+                        </p>
+                      </div>
+                      <igx-chip class="treaty-scope-chip">
+                        <igx-prefix>
+                          <igx-icon class="icon_3">
+                            place
+                          </igx-icon>
+                        </igx-prefix>
+                        11:00 UTC
+                      </igx-chip>
+                    </div>
+                  </div>
+                </div>
+              </igx-card-content>
+              <igx-card-actions>
+                <ng-container igxStart>
+                  <button igxButton="contained" type="button" (click)="datePhotoScannerDialog.toggle()" class="initialize-directive">
+                    <igx-icon class="icon">
+                      photo_camera
+                    </igx-icon>
+                    <span>Take Photo of Dates</span>
+                  </button>
+                  <button igxButton="outlined" type="button" (click)="morningBriefingSyncSnackbar.toggle()" class="cancel">
+                    <igx-icon class="icon_11">
+                      event_available
+                    </igx-icon>
+                    <span>Sync to Schedule</span>
+                  </button>
+                </ng-container>
+                <ng-container igxEnd></ng-container>
+              </igx-card-actions>
+            </igx-card>
+          </div>
+        </div>
+      </div>
+      <igx-dialog [closeOnOutsideSelect]="true" #datePhotoScannerDialog class="create-directive-dialog">
+        <igx-dialog-title>
+          Optical Date Scanner &amp; Camera Capture
+        </igx-dialog-title>
+        <ng-container>
+          <div class="column-layout dialog-content-container">
+            <p class="ig-typography__body-2 text">
+              Position your physical calendar, paper planner, or document within the alignment guides. JARVIS computer vision automatically detects milestone dates, meetings, and deadlines.
+            </p>
+            <div class="column-layout viewfinder-frame">
+              <img src="/assets/camera-viewfinder-scanning-phy-4c88d51edc38.png" alt="" class="viewfinder-live-feed" />
+              <div class="row-layout viewfinder-status-row">
+                <igx-chip class="treaty-scope-chip">
+                  <igx-prefix>
+                    <igx-icon class="icon_12">
+                      crop_free
+                    </igx-icon>
+                  </igx-prefix>
+                  Auto-Boundary: Locked
+                </igx-chip>
+                <igx-chip class="treaty-scope-chip">
+                  <igx-prefix>
+                    <igx-icon class="icon_15">
+                      light_mode
+                    </igx-icon>
+                  </igx-prefix>
+                  Lighting: Optimal
+                </igx-chip>
+                <igx-switch [(ngModel)]="checked" class="morning-global-news-alert-switch">
+                  Flash Torch
+                </igx-switch>
+              </div>
+            </div>
+            <div class="row-layout document-setup-row">
+              <igx-select type="border" [(ngModel)]="value5" class="digest-delivery-time-select">
+                <igx-select-item value="1">
+                  Physical Wall or Desk Calendar
+                </igx-select-item>
+                <igx-select-item value="2">
+                  Handwritten Planner / Diary
+                </igx-select-item>
+                <igx-select-item value="3">
+                  Printed Conference Agenda
+                </igx-select-item>
+                <igx-select-item value="4">
+                  Digital Display / Sticky Note
+                </igx-select-item>
+                <label igxLabel>Document Format</label>
+              </igx-select>
+              <button igxButton="contained" type="button" (click)="morningBriefingSyncSnackbar.toggle()" class="btn-create-directive-2">
+                <igx-icon class="icon">
+                  camera
+                </igx-icon>
+                <span>Capture Snapshot</span>
+              </button>
+            </div>
+          </div>
+        </ng-container>
+        <igx-dialog-actions>
+          <button igxButton="flat" type="button" (click)="datePhotoScannerDialog.toggle()" class="dismiss-dialog-button">
+            Cancel
+          </button>
+          <button igxButton="contained" type="button" (click)="datePhotoScannerDialog.toggle()" class="initialize-directive">
+            <igx-icon class="icon">
+              document_scanner
+            </igx-icon>
+            <span>Extract &amp; Sync Dates</span>
+          </button>
+        </igx-dialog-actions>
+      </igx-dialog>
+      <igx-snackbar actionText="Acknowledge" (clicked)="morningBriefingSyncSnackbar.toggle()" #morningBriefingSyncSnackbar class="tactical-queue-snackbar">
+        Morning news briefing scheduled and extracted dates synced to schedule.
+      </igx-snackbar>
+    </div>
+  </div>
+</div>

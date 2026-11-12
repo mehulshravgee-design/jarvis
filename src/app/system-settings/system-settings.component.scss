@@ -1,0 +1,401 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+}
+.column-layout {
+  display: flex;
+  flex-direction: column;
+}
+.placeholder-system-settings {
+  background-color: var(--ig-surface-900);
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.row-layout {
+  display: flex;
+}
+.system-settings-page-frame {
+  justify-content: center;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0;
+  position: relative;
+  padding: 48px 32px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.system-settings-page-column {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 24px;
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  max-width: 1280px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.system-settings-header-section {
+  background-color: var(--ig-surface-800);
+  border-color: var(--ig-surface-600);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 12px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  padding: 24px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.system-settings-header-top-row {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px 16px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.system-settings-title-group {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 4px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.system-settings-badge-row {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.system-settings-header-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.vocal-synthesizer-calibration-section {
+  background-color: var(--ig-surface-800);
+  border-color: var(--ig-surface-600);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 12px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 20px;
+  position: relative;
+  padding: 24px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.vocal-calibration-header {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 4px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.vocal-calibration-content-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 24px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.vocal-controls-column {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 320px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.speech-rate-slider-group {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 6px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.vocal-actions-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.vocal-summary-column {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  min-width: 300px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.vocal-calibration-summary-card {
+  --background: var(--ig-surface-700);
+  --outline-color: var(--ig-surface-600);
+  height: max-content;
+  min-width: 320px;
+  max-width: 576px;
+}
+.vocal-summary-card-body {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 14px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.vocal-profile-summary-block {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 2px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.security-badge-block {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 6px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.hud-dropdowns-column {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 300px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.hud-switches-column {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 14px;
+  position: relative;
+  min-width: 300px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.dialog-content-layout {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.dialog-sample-quote-box {
+  background-color: var(--ig-surface-700);
+  border-color: var(--ig-surface-600);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 4px;
+  position: relative;
+  padding: 12px 16px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.dialog-playback-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.content {
+  color: var(--ig-gray-900);
+  height: max-content;
+  min-width: min-content;
+}
+.system-settings-subtitle {
+  color: var(--ig-gray-700);
+  height: max-content;
+  min-width: min-content;
+}
+.icon {
+  color: var(--ig-gray-800);
+}
+.icon_1 {
+  color: var(--ig-primary-500-contrast);
+}
+.safety-banner-icon {
+  --size: 24px;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--ig-success-500);
+}
+.state-writer-system-settings-voicecalibration-speechrateslider-label {
+  color: var(--ig-gray-800);
+  height: max-content;
+  min-width: min-content;
+}
+.vocal-profile-summary-reader {
+  color: var(--ig-primary-400);
+  height: max-content;
+  min-width: min-content;
+}
+.vocal-cadence-summary-reader {
+  color: var(--ig-secondary-400);
+  height: max-content;
+  min-width: min-content;
+}
+.icon_2 {
+  color: var(--ig-primary-400);
+}
+.neural-engine-status-badge {
+  width: max-content;
+  height: max-content;
+}
+.safety-threshold-banner {
+  height: max-content;
+  min-width: min-content;
+  flex-shrink: 0;
+}
+.vocal-cadence-meter {
+  --fill-color-default: var(--ig-primary-500);
+  --track-color: var(--ig-surface-600);
+  width: 100%;
+  height: max-content;
+  min-width: 75px;
+  min-height: null;
+  max-width: 100%;
+}
+.vocal-audio-test-dialog {
+  position: absolute;
+}
+.settings-saved-snackbar {
+  height: max-content;
+  min-width: 344px;
+}
+.toggle-safety-banner-btn {
+  --foreground: var(--ig-gray-800);
+  --border-color: var(--ig-surface-600);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.save-configuration-btn {
+  --foreground: var(--ig-primary-500-contrast);
+  --background: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.safety-banner-ack-btn {
+  --foreground: var(--ig-primary-400);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.state-writer-system-settings-voicecalibration-vocalprofileselect {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+.state-writer-system-settings-voicecalibration-speechrateslider {
+  min-width: 50px;
+}
+.pitch-modulation-switch {
+  width: max-content;
+  height: max-content;
+}
+.state-action-system-settings-persona-protocols-security-gates-lock-security-protocols {
+  --foreground: var(--ig-primary-400);
+  --border-color: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.hud-export-telemetry-btn {
+  --foreground: var(--ig-primary-400);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  flex-shrink: 0;
+}
+.dialog-cancel-btn {
+  --foreground: var(--ig-gray-800);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.dialog-apply-btn {
+  --foreground: var(--ig-primary-500-contrast);
+  --background: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}

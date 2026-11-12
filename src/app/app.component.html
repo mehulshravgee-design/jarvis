@@ -1,0 +1,349 @@
+<igx-navbar class="jarvis-navbar">
+  <igx-navbar-action>
+    <button igxIconButton="flat" [igxToggleAction]="jarvisDrawer" class="btn-toggle-drawer">
+      <igx-icon class="icon">
+        menu
+      </igx-icon>
+    </button>
+  </igx-navbar-action>
+  <igx-navbar-title class="navbar-content">
+    <h6 class="h6">
+      JARVIS
+    </h6>
+  </igx-navbar-title>
+</igx-navbar>
+<div class="row-layout jarvis-content-layout">
+  <igx-nav-drawer [isOpen]="true" [pin]="true" width="280px" #jarvisDrawer class="jarvis-drawer">
+    <ng-template igxDrawer>
+      <div igxDrawerItem [active]="isActive(`/command-center`)" [routerLink]="[`/command-center`]">
+        <span>Command Center</span>
+      </div>
+      <div igxDrawerItem [active]="isActive(`/ai-assistant`)" [routerLink]="[`/ai-assistant`]">
+        <span>AI Assistant</span>
+      </div>
+      <div igxDrawerItem [active]="isActive(`/ai-assistant`)" [routerLink]="[`/ai-assistant`]">
+        <span>AI Assistant</span>
+      </div>
+      <div igxDrawerItem [active]="isActive(`/ai-assistant`)" [routerLink]="[`/ai-assistant`]">
+        <span>AI Assistant</span>
+      </div>
+      <div igxDrawerItem [active]="isActive(`/ai-assistant`)" [routerLink]="[`/ai-assistant`]">
+        <span>AI Assistant</span>
+      </div>
+      <div igxDrawerItem [active]="isActive(`/tasks-and-schedule`)" [routerLink]="[`/tasks-and-schedule`]">
+        <span>Tasks and Schedule</span>
+      </div>
+      <div igxDrawerItem [active]="isActive(`/advanced-tools`)" [routerLink]="[`/advanced-tools`]">
+        <span>Advanced Tools</span>
+      </div>
+      <div igxDrawerItem [active]="isActive(`/system-settings`)" [routerLink]="[`/system-settings`]">
+        <span>System Settings</span>
+      </div>
+    </ng-template>
+  </igx-nav-drawer>
+  <div class="jarvis-view-container">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="column-layout important-dates-photo-intake-directives">
+    <div class="row-layout row-photo-header">
+      <div class="column-layout col-photo-header-text">
+        <h3 class="content">
+          Important Dates Photo Ingestion &amp; Directives
+        </h3>
+        <p class="ig-typography__body-2 desc-dates-intake">
+          Photograph physical calendars, invitation notices, and printed agendas. JARVIS neural OCR extracts due dates, calculates confidence scores, and converts them into scheduled TaskDirectives.
+        </p>
+      </div>
+      <div class="row-layout row-photo-header-actions">
+        <button igxButton="contained" type="button" (click)="documentPhotoCaptureDialog.toggle()" class="btn-photograph-schedule">
+          <igx-icon class="icon_1">
+            photo_camera
+          </igx-icon>
+          <span>Photograph Schedule</span>
+        </button>
+        <button igxButton="outlined" type="button" (click)="documentPhotoCaptureDialog.toggle()" class="btn-upload-document">
+          <igx-icon class="icon_2">
+            upload_file
+          </igx-icon>
+          <span>Upload Scan</span>
+        </button>
+        <button igxButton="flat" type="button" (click)="snackbarMorningPrefs.toggle()" class="btn-resync-ocr">
+          <igx-icon class="icon_2">
+            sync
+          </igx-icon>
+          <span>Re-Sync Directives</span>
+        </button>
+      </div>
+    </div>
+    <div class="row-layout row-directive-chips">
+      <igx-chip class="chip-all-directives">
+        <igx-prefix>
+          <igx-icon class="icon_3">
+            calendar_today
+          </igx-icon>
+        </igx-prefix>
+        All Captured Dates (28)
+      </igx-chip>
+      <igx-chip class="chip-all-directives">
+        <igx-prefix>
+          <igx-icon class="icon_4">
+            verified
+          </igx-icon>
+        </igx-prefix>
+        Confidence &gt;90% (21)
+      </igx-chip>
+      <igx-chip class="chip-all-directives">
+        <igx-prefix>
+          <igx-icon class="icon_5">
+            alarm_on
+          </igx-icon>
+        </igx-prefix>
+        Morning Alert Active (18)
+      </igx-chip>
+      <igx-chip class="chip-all-directives">
+        <igx-prefix>
+          <igx-icon class="icon_6">
+            flag
+          </igx-icon>
+        </igx-prefix>
+        Tactical Milestones (7)
+      </igx-chip>
+    </div>
+    <igx-grid [data]="taskDirectiveTaskDirective" primaryKey="id" [allowFiltering]="true" filterMode="excelStyleFilter" width="100%" class="grid-task-directives">
+      <igx-column field="id" dataType="string" header="id" [filterable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+      <igx-column field="title" dataType="string" header="title" [filterable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+      <igx-column field="dueDate" dataType="date" header="dueDate" [filterable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+      <igx-column field="sourceDocumentImage" dataType="string" header="sourceDocumentImage" [filterable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+      <igx-column field="confidenceScore" dataType="number" header="confidenceScore" [filterable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+      <igx-column field="morningReminderEnabled" dataType="boolean" header="morningReminderEnabled" [filterable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+      <igx-column field="category" dataType="string" header="category" [filterable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+    </igx-grid>
+  </div>
+  <div class="column-layout important-dates-photo-intake-directives">
+    <div class="column-layout col-morning-header-text">
+      <h3 class="content">
+        Morning Reminder &amp; Global Country News Protocols
+      </h3>
+      <p class="ig-typography__body-2 desc-dates-intake">
+        Configure automated 07:00 AM vocal wakeup telemetry, scheduled date announcements, and disable essential world and country news broadcasts.
+      </p>
+    </div>
+    <div class="row-layout row-morning-split">
+      <div class="column-layout col-morning-controls">
+        <div class="column-layout box-news-toggle">
+          <div class="row-layout row-news-switch-header">
+            <div class="row-layout row-news-title-group">
+              <igx-icon class="icon-news-globe">
+                public_off
+              </igx-icon>
+              <h6 class="content">
+                Global Country News Broadcast
+              </h6>
+            </div>
+            <igx-badge type="error" value="OFF — SILENCED" class="badge-news-status"></igx-badge>
+          </div>
+          <igx-switch class="switch-global-news">
+            Essential Country &amp; World News Audio Feed
+          </igx-switch>
+          <p class="ig-typography__body-2 desc-dates-intake">
+            Deactivated: JARVIS will not synthesize international geopolitics, country bulletins, or world wire headlines during morning reminders. Wakeup audio will strictly focus on captured important dates and personal task directives.
+          </p>
+        </div>
+        <div class="row-layout row-timing-selectors">
+          <igx-select type="border" [(ngModel)]="value" class="user-input">
+            <igx-select-item value="1">
+              06:30 AM — Early Tactical Deck
+            </igx-select-item>
+            <igx-select-item value="2">
+              07:00 AM — Standard JARVIS Briefing
+            </igx-select-item>
+            <igx-select-item value="3">
+              07:30 AM — Executive Cadence
+            </igx-select-item>
+            <igx-select-item value="4">
+              08:00 AM — Extended Rest Schedule
+            </igx-select-item>
+            <label igxLabel>Morning Dispatch Window</label>
+          </igx-select>
+          <igx-select type="border" [(ngModel)]="value1" class="user-input">
+            <igx-select-item value="1">
+              JARVIS British Timbre (Neural Speech)
+            </igx-select-item>
+            <igx-select-item value="2">
+              FRIDAY Synthetic Modulation
+            </igx-select-item>
+            <igx-select-item value="3">
+              Direct Telemetry Readout Only
+            </igx-select-item>
+            <label igxLabel>Acoustic Delivery Persona</label>
+          </igx-select>
+        </div>
+        <div class="row-layout row-secondary-switches">
+          <igx-switch [(ngModel)]="checked" class="switch-global-news">
+            Vocalize Extracted Due Dates
+          </igx-switch>
+          <igx-switch [(ngModel)]="checked1" class="switch-global-news">
+            Harmonic Acoustic Chime
+          </igx-switch>
+          <igx-switch [(ngModel)]="checked2" class="switch-global-news">
+            Local Atmospheric Report
+          </igx-switch>
+        </div>
+        <div class="row-layout row-preferences-actions">
+          <button igxButton="contained" type="button" (click)="snackbarMorningPrefs.toggle()" class="btn-photograph-schedule">
+            <igx-icon class="icon_1">
+              save
+            </igx-icon>
+            <span>Save Morning Preferences</span>
+          </button>
+          <button igxButton="outlined" type="button" (click)="snackbarMorningPrefs.toggle()" class="btn-upload-document">
+            <igx-icon class="icon_2">
+              volume_up
+            </igx-icon>
+            <span>Simulate Vocal Briefing</span>
+          </button>
+          <button igxButton="flat" type="button" (click)="snackbarMorningPrefs.toggle()" class="btn-reset-preferences">
+            Reset to Default
+          </button>
+        </div>
+      </div>
+      <div class="column-layout col-morning-card-wrapper">
+        <igx-card class="card-morning-summary">
+          <igx-card-header>
+            <div igxCardThumbnail>
+              <igx-avatar shape="circle" class="avatar-morning-card">
+                <igx-icon class="icon_1">
+                  alarm
+                </igx-icon>
+              </igx-avatar>
+            </div>
+            <h3 igxCardHeaderTitle>
+              Morning Routine Active Status
+            </h3>
+            <h5 igxCardHeaderSubtitle>
+              07:00 AM dispatch configuration overview
+            </h5>
+          </igx-card-header>
+          <igx-card-content>
+            <div class="column-layout col-morning-card-content">
+              <div class="row-layout row-news-switch-header">
+                <igx-badge type="error" value="Global News: MUTED" class="badge-news-status"></igx-badge>
+                <igx-badge type="success" value="Dates Alert: ACTIVE" class="badge-news-status"></igx-badge>
+              </div>
+              <div class="row-layout row-card-detail-time">
+                <igx-icon class="icon-card-time">
+                  schedule
+                </igx-icon>
+                <p class="ig-typography__body-2 content">
+                  Dispatch: 07:00 AM (EST)
+                </p>
+              </div>
+              <div class="row-layout row-card-detail-time">
+                <igx-icon class="icon-news-globe">
+                  block
+                </igx-icon>
+                <p class="ig-typography__body-2 desc-dates-intake">
+                  Country News: Suppressed by User
+                </p>
+              </div>
+              <div class="row-layout row-card-detail-time">
+                <igx-icon class="icon-card-time">
+                  event_available
+                </igx-icon>
+                <p class="ig-typography__body-2 content">
+                  Extracted Dates Ingested: 18 Active
+                </p>
+              </div>
+              <igx-linear-bar [value]="100" [animationDuration]="500" textAlign="center" [textTop]="true" class="bar-card-readiness"></igx-linear-bar>
+              <p class="ig-typography__caption desc-dates-intake">
+                Profile ready. Acoustic synthesis duration estimated at 1m 45s.
+              </p>
+            </div>
+          </igx-card-content>
+          <igx-card-actions>
+            <ng-container igxStart>
+              <button igxButton="flat" type="button" (click)="snackbarMorningPrefs.toggle()" class="btn-card-calibrate">
+                <igx-icon class="icon_2">
+                  tune
+                </igx-icon>
+                <span>Calibrate Briefing Routine</span>
+              </button>
+            </ng-container>
+            <ng-container igxEnd></ng-container>
+          </igx-card-actions>
+        </igx-card>
+      </div>
+    </div>
+  </div>
+  <igx-dialog [closeOnOutsideSelect]="true" #documentPhotoCaptureDialog class="document-photo-capture-dialog">
+    <igx-dialog-title>
+      Photograph Schedule &amp; Dates Scanner
+    </igx-dialog-title>
+    <ng-container>
+      <div class="column-layout col-dialog-content">
+        <div class="column-layout box-dialog-viewfinder">
+          <igx-icon class="icon-dialog-camera">
+            camera_alt
+          </igx-icon>
+          <h6 class="title-dialog-scanner">
+            Optical Viewfinder &amp; Schedule Boundary Detection
+          </h6>
+          <p class="ig-typography__caption desc-dialog-scanner">
+            Align calendar grid, invitation, or document edges inside the guide reticle.
+          </p>
+          <igx-badge type="success" value="DOCUMENT EDGE RECOGNIZED" class="badge-news-status"></igx-badge>
+        </div>
+        <div class="row-layout row-dialog-fields-1">
+          <igx-input-group type="border" class="user-input">
+            <input type="text" [(ngModel)]="value2" placeholder="e.g. Q3 Strategic Milestone & Operations Review" required="true" igxInput #igxInput="igxInput" />
+            <label igxLabel>Extracted Event / Directive Title</label>
+            @if (!igxInput.isValid && igxInput.nativeElement.validity.valueMissing) {
+              <igx-hint>This field is required</igx-hint>
+            }
+          </igx-input-group>
+          <igx-date-picker placeholder="YYYY-MM-DD" required="true" type="border" class="picker-dialog-date">
+            <label igxLabel>Identified Due Date</label>
+          </igx-date-picker>
+        </div>
+        <div class="row-layout row-dialog-fields-1">
+          <igx-select type="border" [(ngModel)]="value3" class="select-dialog-category">
+            <igx-select-item value="1">
+              Tactical Milestone
+            </igx-select-item>
+            <igx-select-item value="2">
+              Critical Deadline
+            </igx-select-item>
+            <igx-select-item value="3">
+              Personal Schedule
+            </igx-select-item>
+            <igx-select-item value="4">
+              Administrative Filing
+            </igx-select-item>
+            <label igxLabel>Directive Classification</label>
+          </igx-select>
+          <igx-input-group type="border" class="input-dialog-confidence">
+            <input type="text" [(ngModel)]="value4" disabled="true" igxInput />
+            <label igxLabel>OCR Confidence</label>
+          </igx-input-group>
+        </div>
+        <igx-switch [(ngModel)]="checked3" class="switch-global-news">
+          Enable in Morning Reminder Audio Dispatch
+        </igx-switch>
+      </div>
+    </ng-container>
+    <igx-dialog-actions>
+      <button igxButton="outlined" type="button" (click)="documentPhotoCaptureDialog.toggle()" class="btn-dialog-cancel">
+        Dismiss
+      </button>
+      <button igxButton="contained" type="button" (click)="documentPhotoCaptureDialog.toggle()" class="btn-dialog-confirm">
+        <igx-icon class="icon_1">
+          cloud_done
+        </igx-icon>
+        <span>Ingest Extracted Dates</span>
+      </button>
+    </igx-dialog-actions>
+  </igx-dialog>
+  <igx-snackbar actionText="Dismiss" (clicked)="snackbarMorningPrefs.toggle()" #snackbarMorningPrefs class="snackbar-morning-prefs">
+    Schedule photo processed and TaskDirectives successfully scheduled
+  </igx-snackbar>
+</div>

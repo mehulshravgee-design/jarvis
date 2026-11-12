@@ -1,0 +1,610 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+}
+.column-layout {
+  display: flex;
+  flex-direction: column;
+}
+.placeholder-ai-assistant {
+  background-color: var(--ig-surface-900);
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.row-layout {
+  display: flex;
+}
+.page-frame-row {
+  justify-content: center;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 0;
+  position: relative;
+  padding: 48px 32px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.page-frame-container {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 24px;
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  max-width: 1280px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.neural-visualizer-session-status {
+  background-color: var(--ig-surface-800);
+  border-color: var(--ig-primary-500);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 12px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 20px;
+  position: relative;
+  padding: 24px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.neural-header-bar {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px 16px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.neural-header-text {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 4px 0;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.system-health-pills {
+  justify-content: flex-end;
+  align-items: center;
+  align-content: flex-start;
+  gap: 0 8px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.telemetry-and-controls-grid {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px 24px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.assistant-audio-settings {
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px 0;
+  position: relative;
+  min-width: 280px;
+  flex-grow: 1;
+  flex-basis: 300px;
+}
+.settings-action-buttons {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 0 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.waveform-visualizer-centerpiece {
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px 0;
+  position: relative;
+  min-width: 300px;
+  flex-grow: 1;
+  flex-basis: 340px;
+}
+.session-status-summary-tile {
+  background-color: var(--ig-surface-700);
+  border-color: var(--ig-surface-600);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 10px 0;
+  position: relative;
+  padding: 14px 16px;
+  min-width: 260px;
+  flex-grow: 1;
+  flex-basis: 260px;
+}
+.summary-header {
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 0 8px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.conversational-workspace {
+  background-color: var(--ig-surface-800);
+  border-color: var(--ig-surface-600);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 12px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 24px;
+  position: relative;
+  padding: 24px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.conversation-history-deck {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 14px 0;
+  position: relative;
+  min-width: 300px;
+  max-width: 340px;
+  flex-shrink: 0;
+  flex-basis: 320px;
+}
+.deck-filter-chips {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 6px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.message-stream-feed {
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px 0;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.active-thread-toolbar {
+  border-color: var(--ig-surface-600);
+  border-width: 0px 0px 1px;
+  border-style: solid;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px 12px;
+  position: relative;
+  padding-bottom: 12px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.active-thread-info {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 2px 0;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.thread-title-row {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 0 10px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.active-thread-actions {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 0 8px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.prompt-composer-vocal-dictation-bar {
+  border-color: var(--ig-primary-500);
+  border-width: 1px 0px 0px;
+  border-style: solid;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 10px 0;
+  position: relative;
+  padding-top: 12px;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.dictation-telemetry-meta {
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  gap: 0 12px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+.acoustic-pulse-indicator {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 0 6px;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.column-layout_1 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px 0;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.content {
+  color: var(--ig-gray-900);
+  height: max-content;
+  min-width: min-content;
+}
+.text {
+  color: var(--ig-gray-700);
+  height: max-content;
+  min-width: min-content;
+}
+.icon {
+  color: var(--ig-primary-400);
+}
+.audio-waveform-telemetry {
+  object-fit: cover;
+  border-radius: 8px;
+  width: 100%;
+  height: 150px;
+  min-width: 100%;
+  min-height: 150px;
+  max-width: 100%;
+  max-height: 150px;
+  flex-shrink: 0;
+}
+.text_1 {
+  text-align: center;
+  color: var(--ig-secondary-400);
+  height: max-content;
+  min-width: min-content;
+}
+.icon_1 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-primary-400);
+}
+.text_2 {
+  color: var(--ig-secondary-400);
+  height: max-content;
+  min-width: min-content;
+}
+.text_3 {
+  color: var(--ig-primary-400);
+  height: max-content;
+  min-width: min-content;
+}
+.c-nominal {
+  color: var(--ig-success-400);
+  height: max-content;
+  min-width: min-content;
+}
+.icon_2 {
+  color: var(--ig-primary-500-contrast);
+}
+.icon_3 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-gray-700);
+}
+.all-threads {
+  --ig-size: var(--ig-size-small);
+  width: max-content;
+  height: max-content;
+}
+.icon_4 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+.avatar {
+  --ig-size: var(--ig-size-medium);
+  --igx-avatar-background: var(--ig-primary-500);
+}
+.icon_5 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-secondary-500);
+}
+.avatar_1 {
+  --ig-size: var(--ig-size-medium);
+  --igx-avatar-background: var(--ig-primary-700);
+}
+.icon_6 {
+  color: var(--ig-primary-700-contrast);
+}
+.icon_7 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-gray-500);
+}
+.avatar_2 {
+  --ig-size: var(--ig-size-medium);
+  --igx-avatar-background: var(--ig-secondary-500);
+}
+.icon_8 {
+  color: var(--ig-secondary-500-contrast);
+}
+.avatar_3 {
+  --ig-size: var(--ig-size-medium);
+  --igx-avatar-background: var(--ig-gray-700);
+}
+.icon_9 {
+  color: var(--ig-gray-700-contrast);
+}
+.avatar_4 {
+  --ig-size: var(--ig-size-medium);
+  --igx-avatar-background: var(--ig-warn-600);
+}
+.icon_10 {
+  color: var(--ig-warn-600-contrast);
+}
+.icon_11 {
+  color: var(--ig-gray-800);
+}
+.icon_12 {
+  color: var(--ig-error-400);
+}
+.avatar_5 {
+  --ig-size: var(--ig-size-medium);
+  --igx-avatar-background: var(--ig-primary-600);
+}
+.icon_13 {
+  color: var(--ig-primary-600-contrast);
+}
+.icon_14 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-primary-500);
+}
+.icon_15 {
+  --size: 18px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--ig-success-500);
+}
+.text_4 {
+  color: var(--ig-gray-600);
+  height: max-content;
+  min-width: min-content;
+}
+.text_5 {
+  color: var(--ig-gray-800);
+  height: max-content;
+  min-width: min-content;
+}
+.avatar_6::part(base) {
+  --igx-avatar-color: var(--ig-primary-500-contrast);
+}
+.avatar_1_1::part(base) {
+  --igx-avatar-color: var(--ig-primary-700-contrast);
+}
+.avatar_2_1::part(base) {
+  --igx-avatar-color: var(--ig-secondary-500-contrast);
+}
+.avatar_2_2::part(base) {
+  --igx-avatar-color: var(--ig-secondary-500-contrast);
+}
+.avatar_2_3::part(base) {
+  --igx-avatar-color: var(--ig-secondary-500-contrast);
+}
+.avatar_2_4::part(base) {
+  --igx-avatar-color: var(--ig-secondary-500-contrast);
+}
+.avatar_3_1::part(base) {
+  --igx-avatar-color: var(--ig-gray-700-contrast);
+}
+.avatar_4_1::part(base) {
+  --igx-avatar-color: var(--ig-warn-600-contrast);
+}
+.avatar_5_1::part(base) {
+  --igx-avatar-color: var(--ig-primary-600-contrast);
+}
+.avatar_5_2::part(base) {
+  --igx-avatar-color: var(--ig-primary-600-contrast);
+}
+.avatar_5_3::part(base) {
+  --igx-avatar-color: var(--ig-primary-600-contrast);
+}
+.neural-engine-active {
+  width: max-content;
+  height: max-content;
+}
+.export-session-transcript {
+  position: absolute;
+}
+.snackbar {
+  height: max-content;
+  min-width: 344px;
+}
+.voice-audio-synthesizer {
+  width: max-content;
+  height: max-content;
+}
+.neural-reasoning-depth {
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+  min-width: min-content;
+}
+.default-audio-settings {
+  --foreground: var(--ig-gray-800);
+  --border-color: var(--ig-surface-600);
+  --ig-size: var(--ig-size-small);
+  height: max-content;
+  flex-shrink: 0;
+}
+.export-session-transcript_1 {
+  --foreground: var(--ig-primary-400);
+  --border-color: var(--ig-primary-500);
+  --ig-size: var(--ig-size-small);
+  height: max-content;
+  flex-shrink: 0;
+}
+.new-thread {
+  --foreground: var(--ig-primary-500-contrast);
+  --background: var(--ig-primary-500);
+  --ig-size: var(--ig-size-small);
+  height: max-content;
+  flex-shrink: 0;
+}
+.search-directives {
+  --ig-size: var(--ig-size-small);
+  height: max-content;
+  min-width: min-content;
+}
+.stop-voice {
+  --foreground: var(--ig-error-400);
+  --border-color: var(--ig-error-500);
+  --ig-size: var(--ig-size-small);
+  height: max-content;
+  flex-shrink: 0;
+}
+.icon-button {
+  --foreground: var(--ig-gray-800);
+  --ig-size: var(--ig-size-medium);
+}
+.activate-microphone {
+  --foreground: var(--ig-primary-400);
+  --background: var(--ig-surface-700);
+  --ig-size: var(--ig-size-large);
+  height: max-content;
+  flex-shrink: 0;
+}
+.text-area {
+  height: max-content;
+  min-width: min-content;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.send-directive {
+  --foreground: var(--ig-primary-500-contrast);
+  --background: var(--ig-primary-500);
+  --ig-size: var(--ig-size-large);
+  height: max-content;
+  flex-shrink: 0;
+}
+.cancel {
+  --foreground: var(--ig-gray-800);
+  --border-color: var(--ig-surface-600);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.confirm-export {
+  --foreground: var(--ig-primary-500-contrast);
+  --background: var(--ig-primary-500);
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.conversation-threads-list {
+  --ig-size: var(--ig-size-medium);
+  height: max-content;
+}
+.mark-vii-telemetry-diagnostics {
+  --item-background: var(--ig-surface-700);
+  --item-background-hover: var(--igx-list-item-background-hover, var(--ig-list-item-background-hover, lch(from var(--item-background) calc(l + (50 - l) * 0.1 + sign(50 - l) * 5) c h)));
+  --item-background-active: var(--igx-list-item-background-active, var(--ig-list-item-background-active, var(--item-background-hover)));
+  --item-background-selected: var(--igx-list-item-background-selected, var(--ig-list-item-background-selected, var(--item-background-active)));
+  --item-text-color: var(--igx-list-item-text-color, var(--ig-list-item-text-color, hsla(from color(from var(--item-background) var(--y-contrast)) h 0 l/1)));
+  --item-text-color-hover: var(--igx-list-item-text-color-hover, var(--ig-list-item-text-color-hover, hsla(from color(from var(--item-background-hover) var(--y-contrast)) h 0 l/1)));
+  --item-text-color-active: var(--igx-list-item-text-color-active, var(--ig-list-item-text-color-active, hsla(from color(from var(--item-background-active) var(--y-contrast)) h 0 l/1)));
+  --item-text-color-selected: var(--igx-list-item-text-color-selected, var(--ig-list-item-text-color-selected, hsla(from color(from var(--item-background-selected) var(--y-contrast)) h 0 l/1)));
+  --item-title-color: var(--igx-list-item-title-color, var(--ig-list-item-title-color, var(--item-text-color)));
+  --item-title-color-hover: var(--igx-list-item-title-color-hover, var(--ig-list-item-title-color-hover, var(--item-text-color-hover)));
+  --item-title-color-active: var(--igx-list-item-title-color-active, var(--ig-list-item-title-color-active, var(--item-text-color-active)));
+  --item-title-color-selected: var(--igx-list-item-title-color-selected, var(--ig-list-item-title-color-selected, var(--item-text-color-selected)));
+  --item-action-color: var(--igx-list-item-action-color, var(--ig-list-item-action-color, var(--item-text-color)));
+  --item-action-color-hover: var(--igx-list-item-action-color-hover, var(--ig-list-item-action-color-hover, var(--item-text-color-hover)));
+  --item-action-color-active: var(--igx-list-item-action-color-active, var(--ig-list-item-action-color-active, var(--item-text-color-active)));
+  --item-action-color-selected: var(--igx-list-item-action-color-selected, var(--ig-list-item-action-color-selected, var(--item-text-color-selected)));
+  --item-subtitle-color: var(--igx-list-item-subtitle-color, var(--ig-list-item-subtitle-color, hsl(from var(--item-text-color) h s l/0.74)));
+  --item-subtitle-color-hover: var(--igx-list-item-subtitle-color-hover, var(--ig-list-item-subtitle-color-hover, hsl(from var(--item-text-color-hover) h s l/0.74)));
+  --item-subtitle-color-active: var(--igx-list-item-subtitle-color-active, var(--ig-list-item-subtitle-color-active, hsl(from var(--item-text-color-active) h s l/0.74)));
+  --item-subtitle-color-selected: var(--igx-list-item-subtitle-color-selected, var(--ig-list-item-subtitle-color-selected, hsl(from var(--item-text-color-selected) h s l/0.74)));
+  --item-thumbnail-color: var(--igx-list-item-thumbnail-color, var(--ig-list-item-thumbnail-color, var(--item-text-color)));
+  --item-thumbnail-color-hover: var(--igx-list-item-thumbnail-color-hover, var(--ig-list-item-thumbnail-color-hover, var(--item-text-color-hover)));
+  --item-thumbnail-color-active: var(--igx-list-item-thumbnail-color-active, var(--ig-list-item-thumbnail-color-active, var(--item-text-color-active)));
+  --item-thumbnail-color-selected: var(--igx-list-item-thumbnail-color-selected, var(--ig-list-item-thumbnail-color-selected, var(--item-text-color-selected)));
+}
+.chronological-chat-messages-stream {
+  --ig-size: var(--ig-size-large);
+  height: max-content;
+}

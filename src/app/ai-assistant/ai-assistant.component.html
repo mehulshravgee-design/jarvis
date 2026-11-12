@@ -1,0 +1,518 @@
+<div class="column-layout placeholder-ai-assistant">
+  <div class="row-layout page-frame-row">
+    <div class="column-layout page-frame-container">
+      <div class="column-layout neural-visualizer-session-status">
+        <div class="row-layout neural-header-bar">
+          <div class="column-layout neural-header-text">
+            <h3 class="content">
+              AI Assistant // Neural Directive Console
+            </h3>
+            <p class="text">
+              JARVIS Quantum Core v4.2 • Autonomous Vocal Synthesis, Speech Dictation, and Real-Time Frequency Telemetry.
+            </p>
+          </div>
+          <div class="row-layout system-health-pills">
+            <igx-badge type="success" value="Neural Engine: Active" class="neural-engine-active"></igx-badge>
+            <igx-badge type="info" value="Acoustic Stream: 48 kHz" class="neural-engine-active"></igx-badge>
+          </div>
+        </div>
+        <div class="row-layout telemetry-and-controls-grid">
+          <div class="column-layout assistant-audio-settings">
+            <h6 class="content">
+              Synthesizer &amp; Reasoning Protocols
+            </h6>
+            <igx-switch [(ngModel)]="voiceAudioSynthesizerActive" class="voice-audio-synthesizer">
+              Voice Audio Synthesizer
+            </igx-switch>
+            <igx-select type="border" [(ngModel)]="neuralReasoningDepth" class="neural-reasoning-depth">
+              <igx-select-item value="Rapid Response">
+                Rapid Response
+              </igx-select-item>
+              <igx-select-item value="Balanced Analytical">
+                Balanced Analytical
+              </igx-select-item>
+              <igx-select-item value="Comprehensive">
+                Comprehensive
+              </igx-select-item>
+              <igx-select-item value="Deep Tactical">
+                Deep Tactical
+              </igx-select-item>
+              <label igxLabel>Neural Reasoning Depth</label>
+            </igx-select>
+            <div class="row-layout settings-action-buttons">
+              <button igxButton="outlined" type="button" (click)="clickDefaultAudioSettings()" class="default-audio-settings">
+                Default Audio Settings
+              </button>
+              <button igxButton="outlined" type="button" (click)="exportSessionTranscript.toggle()" class="export-session-transcript_1">
+                <igx-icon class="icon">
+                  file_download
+                </igx-icon>
+                <span>Export Session Transcript</span>
+              </button>
+            </div>
+          </div>
+          <div class="column-layout waveform-visualizer-centerpiece">
+            <img src="/assets/futuristic-circular-audio-freq-897ff03b2328.png" alt="" class="audio-waveform-telemetry" />
+            <p class="ig-typography__caption text_1">
+              Acoustic Waveform Lock • Resonance Nominal • Latency 1.2ms
+            </p>
+          </div>
+          <div class="column-layout session-status-summary-tile">
+            <div class="row-layout summary-header">
+              <h6 class="content">
+                Active Protocol Summary
+              </h6>
+              <igx-icon class="icon_1">
+                verified_user
+              </igx-icon>
+            </div>
+            <div class="row-layout summary-header">
+              <p class="ig-typography__caption text">
+                Voice Audio Synthesizer:
+              </p>
+              <p class="ig-typography__body-2 text_2">
+                {{ voiceAudioSynthesizerActive }}
+              </p>
+            </div>
+            <div class="row-layout summary-header">
+              <p class="ig-typography__caption text">
+                Neural Reasoning Depth:
+              </p>
+              <p class="ig-typography__body-2 text_3">
+                {{ neuralReasoningDepth }}
+              </p>
+            </div>
+            <div class="row-layout summary-header">
+              <p class="ig-typography__caption text">
+                Core Temperature:
+              </p>
+              <p class="ig-typography__caption c-nominal">
+                38.2°C Nominal
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row-layout conversational-workspace">
+        <div class="column-layout conversation-history-deck">
+          <div class="row-layout summary-header">
+            <h5 class="content">
+              Directive Logs
+            </h5>
+            <button igxButton="contained" type="button" (click)="snackbar.toggle()" class="new-thread">
+              <igx-icon class="icon_2">
+                add
+              </igx-icon>
+              <span>New Thread</span>
+            </button>
+          </div>
+          <igx-input-group type="search" class="search-directives">
+            <igx-prefix>
+              <igx-icon class="icon_3">
+                search
+              </igx-icon>
+            </igx-prefix>
+            <input type="search" [(ngModel)]="value" placeholder="Search directives & voice logs..." igxInput />
+            <label igxLabel>Search</label>
+          </igx-input-group>
+          <div class="row-layout deck-filter-chips">
+            <igx-chip class="all-threads">
+              <igx-prefix>
+                <igx-icon class="icon_4">
+                  forum
+                </igx-icon>
+              </igx-prefix>
+              All Threads
+            </igx-chip>
+            <igx-chip class="all-threads">
+              <igx-prefix>
+                <igx-icon class="icon_4">
+                  mic
+                </igx-icon>
+              </igx-prefix>
+              Voice Directives
+            </igx-chip>
+            <igx-chip class="all-threads">
+              <igx-prefix>
+                <igx-icon class="icon_4">
+                  star
+                </igx-icon>
+              </igx-prefix>
+              Priority
+            </igx-chip>
+          </div>
+          <igx-list class="conversation-threads-list">
+            <igx-list-item [selected]="this.conversationThreadsListSelectedItem != null && this.conversationThreadsListSelectedItem === '0'" (click)="conversationThreadsListSelectedItem = '0'" class="mark-vii-telemetry-diagnostics">
+              <span igxListThumbnail>
+                <igx-avatar shape="rounded" class="avatar avatar_6">
+                  <igx-icon class="icon_2">
+                    speed
+                  </igx-icon>
+                </igx-avatar>
+              </span>
+              <span igxListLineTitle>Mark VII Telemetry Diagnostics</span>
+              <span igxListLineSubTitle>Thermal core stabilized at 98.4% • 24 msgs</span>
+              <span igxListLine>
+                <p class="ig-typography__caption text">
+                  Updated: Today, 14:32
+                </p>
+              </span>
+              <span igxListAction>
+                <igx-icon class="icon_5">
+                  mic
+                </igx-icon>
+              </span>
+            </igx-list-item>
+            <igx-list-item [selected]="this.conversationThreadsListSelectedItem != null && this.conversationThreadsListSelectedItem === '1'" (click)="conversationThreadsListSelectedItem = '1'">
+              <span igxListThumbnail>
+                <igx-avatar shape="rounded" class="avatar_1 avatar_1_1">
+                  <igx-icon class="icon_6">
+                    security
+                  </igx-icon>
+                </igx-avatar>
+              </span>
+              <span igxListLineTitle>Quantum Cryptographic Handshake</span>
+              <span igxListLineSubTitle>Multi-factor StarkNet nodes verified • 12 msgs</span>
+              <span igxListLine>
+                <p class="ig-typography__caption text">
+                  Updated: Today, 11:15
+                </p>
+              </span>
+              <span igxListAction>
+                <igx-icon class="icon_7">
+                  chat
+                </igx-icon>
+              </span>
+            </igx-list-item>
+            <igx-list-item [selected]="this.conversationThreadsListSelectedItem != null && this.conversationThreadsListSelectedItem === '2'" (click)="conversationThreadsListSelectedItem = '2'">
+              <span igxListThumbnail>
+                <igx-avatar shape="rounded" class="avatar_2 avatar_2_1">
+                  <igx-icon class="icon_8">
+                    flight_takeoff
+                  </igx-icon>
+                </igx-avatar>
+              </span>
+              <span igxListLineTitle>Atmospheric Trajectory Simulation</span>
+              <span igxListLineSubTitle>Descent angle adjusted to 14.8° • 38 msgs</span>
+              <span igxListLine>
+                <p class="ig-typography__caption text">
+                  Updated: Yesterday
+                </p>
+              </span>
+              <span igxListAction>
+                <igx-icon class="icon_5">
+                  mic
+                </igx-icon>
+              </span>
+            </igx-list-item>
+            <igx-list-item [selected]="this.conversationThreadsListSelectedItem != null && this.conversationThreadsListSelectedItem === '3'" (click)="conversationThreadsListSelectedItem = '3'">
+              <span igxListThumbnail>
+                <igx-avatar shape="rounded" class="avatar_3 avatar_3_1">
+                  <igx-icon class="icon_9">
+                    memory
+                  </igx-icon>
+                </igx-avatar>
+              </span>
+              <span igxListLineTitle>Neural Architecture Synthesis</span>
+              <span igxListLineSubTitle>Weights partitioned across clusters • 19 msgs</span>
+              <span igxListLine>
+                <p class="ig-typography__caption text">
+                  Updated: Oct 24
+                </p>
+              </span>
+              <span igxListAction>
+                <igx-icon class="icon_7">
+                  chat
+                </igx-icon>
+              </span>
+            </igx-list-item>
+            <igx-list-item [selected]="this.conversationThreadsListSelectedItem != null && this.conversationThreadsListSelectedItem === '4'" (click)="conversationThreadsListSelectedItem = '4'">
+              <span igxListThumbnail>
+                <igx-avatar shape="rounded" class="avatar_4 avatar_4_1">
+                  <igx-icon class="icon_10">
+                    shield
+                  </igx-icon>
+                </igx-avatar>
+              </span>
+              <span igxListLineTitle>Perimeter Defense Override</span>
+              <span igxListLineSubTitle>Drone perimeter on active standby • 7 msgs</span>
+              <span igxListLine>
+                <p class="ig-typography__caption text">
+                  Updated: Oct 22
+                </p>
+              </span>
+              <span igxListAction>
+                <igx-icon class="icon_5">
+                  mic
+                </igx-icon>
+              </span>
+            </igx-list-item>
+          </igx-list>
+        </div>
+        <div class="column-layout message-stream-feed">
+          <div class="row-layout active-thread-toolbar">
+            <div class="column-layout active-thread-info">
+              <div class="row-layout thread-title-row">
+                <h6 class="content">
+                  Mark VII Telemetry &amp; Thruster Diagnostics
+                </h6>
+                <igx-badge type="success" value="Neural Link Synchronized" class="neural-engine-active"></igx-badge>
+              </div>
+              <p class="ig-typography__caption text">
+                Session ID: #DIR-8842-MK7 • Voice Synthesizer Output: Enabled (High-Fidelity) • Neural Latency: 1.2ms
+              </p>
+            </div>
+            <div class="row-layout active-thread-actions">
+              <button igxButton="outlined" type="button" (click)="snackbar.toggle()" class="default-audio-settings">
+                <igx-icon class="icon_11">
+                  volume_off
+                </igx-icon>
+                <span>Mute</span>
+              </button>
+              <button igxButton="outlined" type="button" (click)="snackbar.toggle()" class="stop-voice">
+                <igx-icon class="icon_12">
+                  stop
+                </igx-icon>
+                <span>Stop Voice</span>
+              </button>
+              <button igxIconButton="flat" (click)="snackbar.toggle()" class="icon-button">
+                <igx-icon class="icon_11">
+                  more_vert
+                </igx-icon>
+              </button>
+            </div>
+          </div>
+          <igx-list class="chronological-chat-messages-stream">
+            <igx-list-item [selected]="this.chronologicalChatMessagesStreamSelectedItem != null && this.chronologicalChatMessagesStreamSelectedItem === '0'" (click)="chronologicalChatMessagesStreamSelectedItem = '0'">
+              <span igxListThumbnail>
+                <igx-avatar shape="rounded" class="avatar_5 avatar_5_1">
+                  <igx-icon class="icon_13">
+                    person
+                  </igx-icon>
+                </igx-avatar>
+              </span>
+              <span igxListLineTitle>Commander Directive // Tony Stark</span>
+              <span igxListLineSubTitle>14:28:10 • Voice Dictation (0:04s)</span>
+              <span igxListLine>
+                <p class="content">
+                  JARVIS, initiate telemetry sweep on the Mark VII suit and verify thruster thermal variance.
+                </p>
+              </span>
+              <span igxListAction>
+                <igx-icon class="icon_14">
+                  mic
+                </igx-icon>
+              </span>
+            </igx-list-item>
+            <igx-list-item [selected]="this.chronologicalChatMessagesStreamSelectedItem != null && this.chronologicalChatMessagesStreamSelectedItem === '1'" (click)="chronologicalChatMessagesStreamSelectedItem = '1'" class="mark-vii-telemetry-diagnostics">
+              <span igxListThumbnail>
+                <igx-avatar shape="rounded" class="avatar_2 avatar_2_2">
+                  <igx-icon class="icon_8">
+                    smart_toy
+                  </igx-icon>
+                </igx-avatar>
+              </span>
+              <span igxListLineTitle>JARVIS // Autonomous Neural Engine</span>
+              <span igxListLineSubTitle>14:28:14 • Audio Synthesizer (0:12s)</span>
+              <span igxListLine>
+                <p class="content">
+                  Right away, sir. Telemetry sweep initiated. Thruster cores Alpha and Beta are operating at 98.4% efficiency with nominal thermal dispersion across titanium housing. All flight stabilization gyros are calibrated.
+                </p>
+              </span>
+              <span igxListAction>
+                <igx-icon class="icon_5">
+                  volume_up
+                </igx-icon>
+              </span>
+            </igx-list-item>
+            <igx-list-item [selected]="this.chronologicalChatMessagesStreamSelectedItem != null && this.chronologicalChatMessagesStreamSelectedItem === '2'" (click)="chronologicalChatMessagesStreamSelectedItem = '2'">
+              <span igxListThumbnail>
+                <igx-avatar shape="rounded" class="avatar_5 avatar_5_2">
+                  <igx-icon class="icon_13">
+                    person
+                  </igx-icon>
+                </igx-avatar>
+              </span>
+              <span igxListLineTitle>Commander Directive // Tony Stark</span>
+              <span igxListLineSubTitle>14:29:05 • Voice Dictation (0:06s)</span>
+              <span igxListLine>
+                <p class="content">
+                  Run a diagnostic on the arc reactor power coupling. Are there any micro-fluctuations in the neural interface bus?
+                </p>
+              </span>
+              <span igxListAction>
+                <igx-icon class="icon_14">
+                  mic
+                </igx-icon>
+              </span>
+            </igx-list-item>
+            <igx-list-item [selected]="this.chronologicalChatMessagesStreamSelectedItem != null && this.chronologicalChatMessagesStreamSelectedItem === '3'" (click)="chronologicalChatMessagesStreamSelectedItem = '3'" class="mark-vii-telemetry-diagnostics">
+              <span igxListThumbnail>
+                <igx-avatar shape="rounded" class="avatar_2 avatar_2_3">
+                  <igx-icon class="icon_8">
+                    smart_toy
+                  </igx-icon>
+                </igx-avatar>
+              </span>
+              <span igxListLineTitle>JARVIS // Autonomous Neural Engine</span>
+              <span igxListLineSubTitle>14:29:09 • Audio Synthesizer (0:16s)</span>
+              <span igxListLine>
+                <p class="content">
+                  Analyzing neural interface bus telemetry... I have detected a 0.04% harmonic variance in coupling node 3. I have routed auxiliary power through secondary conduits to dampen the fluctuation. Neural latency remains under 1.2 milliseconds.
+                </p>
+              </span>
+              <span igxListAction>
+                <igx-icon class="icon_5">
+                  volume_up
+                </igx-icon>
+              </span>
+            </igx-list-item>
+            <igx-list-item [selected]="this.chronologicalChatMessagesStreamSelectedItem != null && this.chronologicalChatMessagesStreamSelectedItem === '4'" (click)="chronologicalChatMessagesStreamSelectedItem = '4'">
+              <span igxListThumbnail>
+                <igx-avatar shape="rounded" class="avatar_5 avatar_5_3">
+                  <igx-icon class="icon_13">
+                    person
+                  </igx-icon>
+                </igx-avatar>
+              </span>
+              <span igxListLineTitle>Commander Directive // Tony Stark</span>
+              <span igxListLineSubTitle>14:30:22 • Voice Dictation (0:05s)</span>
+              <span igxListLine>
+                <p class="content">
+                  Excellent work. Prepare flight telemetry for high-altitude supersonic simulation at Mach 2.4.
+                </p>
+              </span>
+              <span igxListAction>
+                <igx-icon class="icon_14">
+                  mic
+                </igx-icon>
+              </span>
+            </igx-list-item>
+            <igx-list-item [selected]="this.chronologicalChatMessagesStreamSelectedItem != null && this.chronologicalChatMessagesStreamSelectedItem === '5'" (click)="chronologicalChatMessagesStreamSelectedItem = '5'" class="mark-vii-telemetry-diagnostics">
+              <span igxListThumbnail>
+                <igx-avatar shape="rounded" class="avatar_2 avatar_2_4">
+                  <igx-icon class="icon_8">
+                    smart_toy
+                  </igx-icon>
+                </igx-avatar>
+              </span>
+              <span igxListLineTitle>JARVIS // Autonomous Neural Engine</span>
+              <span igxListLineSubTitle>14:30:26 • Audio Synthesizer (0:08s)</span>
+              <span igxListLine>
+                <p class="content">
+                  Directives queued. Atmospheric pressure compensation algorithms loaded. Ready whenever you are, sir.
+                </p>
+              </span>
+              <span igxListAction>
+                <igx-icon class="icon_5">
+                  volume_up
+                </igx-icon>
+              </span>
+            </igx-list-item>
+          </igx-list>
+          <div class="column-layout prompt-composer-vocal-dictation-bar">
+            <div class="row-layout deck-filter-chips">
+              <p class="ig-typography__caption text">
+                Quick Directives:
+              </p>
+              <igx-chip class="all-threads">
+                Synthesize core diagnostic
+              </igx-chip>
+              <igx-chip class="all-threads">
+                Analyze thermal variance
+              </igx-chip>
+              <igx-chip class="all-threads">
+                Calculate trajectory
+              </igx-chip>
+              <igx-chip class="all-threads">
+                Protocol Override
+              </igx-chip>
+            </div>
+            <div class="row-layout thread-title-row">
+              <button igxButton="contained" type="button" (click)="snackbar.toggle()" class="activate-microphone">
+                <igx-icon class="icon">
+                  mic
+                </igx-icon>
+                <span>Activate Microphone</span>
+              </button>
+              <igx-input-group type="border" class="text-area">
+                <textarea placeholder="Dictate speech command or enter directive for JARVIS..." igxInput></textarea>
+              </igx-input-group>
+              <button igxButton="contained" type="button" (click)="snackbar.toggle()" class="send-directive">
+                <igx-icon class="icon_2">
+                  send
+                </igx-icon>
+                <span>Send Directive</span>
+              </button>
+              <button igxIconButton="outlined" (click)="snackbar.toggle()" class="icon-button">
+                <igx-icon class="icon_11">
+                  delete_sweep
+                </igx-icon>
+              </button>
+            </div>
+            <div class="row-layout dictation-telemetry-meta">
+              <div class="row-layout acoustic-pulse-indicator">
+                <igx-icon class="icon_15">
+                  fiber_manual_record
+                </igx-icon>
+                <p class="ig-typography__caption text">
+                  Acoustic Listener Ready • Press microphone to initiate continuous voice stream
+                </p>
+              </div>
+              <p class="ig-typography__caption text_4">
+                Model: JARVIS-Omni-v4 • Context Window: 128k Tokens (4.2k utilized)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <igx-dialog [closeOnOutsideSelect]="true" #exportSessionTranscript class="export-session-transcript">
+        <igx-dialog-title>
+          Export Session Transcript
+        </igx-dialog-title>
+        <ng-container>
+          <div class="column-layout column-layout_1">
+            <p class="ig-typography__body-2 text_5">
+              Select encoding format and encryption parameters to export the conversational transcript and telemetry logs:
+            </p>
+            <igx-select type="border" [(ngModel)]="value1" class="neural-reasoning-depth">
+              <igx-select-item value="Encrypted PDF Dossier">
+                Encrypted PDF Dossier
+              </igx-select-item>
+              <igx-select-item value="JSON Telemetry Stream">
+                JSON Telemetry Stream
+              </igx-select-item>
+              <igx-select-item value="Plain Text Audio Transcript">
+                Plain Text Audio Transcript
+              </igx-select-item>
+              <igx-select-item value="CSV Metric Table">
+                CSV Metric Table
+              </igx-select-item>
+              <label igxLabel>Transcript Export Format</label>
+            </igx-select>
+            <igx-switch [(ngModel)]="checked" class="voice-audio-synthesizer">
+              Stark 256-bit AES Cryptographic Encryption
+            </igx-switch>
+            <igx-switch [(ngModel)]="checked1" class="voice-audio-synthesizer">
+              Include Voice Audio Waveform Timestamps
+            </igx-switch>
+          </div>
+        </ng-container>
+        <igx-dialog-actions>
+          <button igxButton="outlined" type="button" (click)="exportSessionTranscript.toggle()" class="cancel">
+            Cancel
+          </button>
+          <button igxButton="contained" type="button" (click)="exportSessionTranscript.toggle()" class="confirm-export">
+            <igx-icon class="icon_2">
+              file_download
+            </igx-icon>
+            <span>Confirm Export</span>
+          </button>
+        </igx-dialog-actions>
+      </igx-dialog>
+      <igx-snackbar actionText="Dismiss" (clicked)="snackbar.toggle()" #snackbar class="snackbar">
+        Vocal directive synthesized and response rendered.
+      </igx-snackbar>
+    </div>
+  </div>
+</div>

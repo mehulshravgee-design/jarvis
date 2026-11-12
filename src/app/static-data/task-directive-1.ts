@@ -1,0 +1,3 @@
+export const TaskDirective1: Record<string, any> = {
+  'TaskDirectiveTypeTaskDirective1': [{"title":"Perimeter Breach & Infiltration","estimatedMinutes":35},{"title":"High-Value Target Extraction","estimatedMinutes":75},{"title":"Signals Intelligence Wiretap","estimatedMinutes":50},{"title":"Air Defense Neutralization","estimatedMinutes":90},{"title":"Counter-Sniper Sweep","estimatedMinutes":45},{"title":"Ammunition Depot Sabotage","estimatedMinutes":120},{"title":"Hostage Secured & Evacuated","estimatedMinutes":60},{"title":"Tactical Drone Reconnaissance","estimatedMinutes":30},{"title":"Forward Operating Base Fortification","estimatedMinutes":180},{"title":"Biometric Data Harvest","estimatedMinutes":25}],
+};
